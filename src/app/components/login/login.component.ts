@@ -10,7 +10,7 @@ import { Module } from '../../types/module';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
-isDisabled: boolean=false;
+isDisabled: boolean=true;
 public form!: FormGroup;
 public modules: Array<Module> = [];
 
