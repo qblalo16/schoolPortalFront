@@ -60,7 +60,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
       MatFormFieldModule
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'es-Mx' },
-    {provide: RECAPTCHA_SETTINGS, useValue: { siteKey:  '6LcIhC8pAAAAAH4zIifJjXv6KByacQJBP_PVkZlJ' as RecaptchaSettings} },
+    {provide: RECAPTCHA_SETTINGS, useValue: { siteKey:  '6LeufJUpAAAAAFRCn1-DkuPgQO5kC1Mpo-ASTDRD' as RecaptchaSettings} },
     {provide: RECAPTCHA_LANGUAGE, useValue: LOCALE_ID},
     provideAnimationsAsync() ],
     bootstrap: [AppComponent],

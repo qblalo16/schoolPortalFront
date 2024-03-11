@@ -14,7 +14,7 @@ export class BackendService {
   constructor(private httpClient: HttpClient) { }
 
   public validateReCaptcha(request: ReCaptchaRequest){
-    return this.httpClient.post<ReCaptchaResponse>(environment.generalServices + 'Sec/ValidateCaptcha' + '?Subscription-Key=' + environment.generalServicesApiKey, request, {
+    return this.httpClient.post<ReCaptchaResponse>(environment.Backend + 'api/Usuario/ValidateCaptcha' , request, {
       headers: {
         'Content-Type': 'application/json'
       }

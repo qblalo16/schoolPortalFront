@@ -40,7 +40,7 @@
 
        <div class="form-group mt-2">
           <div class="d-grid gap-2">
-             <button type="button" class="btn btn-custom" type="submit">
+             <button type="button" *ngIf="isDisabled" class="btn btn-custom" type="submit">
                 Ingresar
              </button>
           </div>
