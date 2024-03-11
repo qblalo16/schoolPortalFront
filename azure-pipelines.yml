@@ -29,5 +29,5 @@ steps:
     WebAppName: 'centroescolarmex'
     packageForLinux: '$(System.DefaultWorkingDirectory)/dist/portal-school'
     enableCustomDeployment: true
-    DeploymentType: 'webDeploy'
+
 
