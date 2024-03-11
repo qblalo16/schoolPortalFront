@@ -27,7 +27,6 @@ steps:
     azureSubscription: 'SoftwareCity(1)(b250050f-c3ff-473b-aad8-490457d7cbe5)'
     appType: 'webApp'
     WebAppName: 'centroescolarmex'
-    packageForLinux: 'dist'
-    enableCustomDeployment: true
-    DeploymentType: 'webDeploy'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/dist/portal-school'
+
 
