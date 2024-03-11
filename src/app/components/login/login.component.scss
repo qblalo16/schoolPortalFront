@@ -1,0 +1,45 @@
+.main-div{
+    background-color: "#083A5B";
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center; // Centrar horizontalmente
+    align-items: center; // Centrar verticalmente
+  }
+
+  .content-up-down{
+    height: 5%;
+  }
+
+  .center-flex-image {
+    display: flex;
+    justify-content: center; // Centrar horizontalmente
+    align-items: center; // Centrar verticalmente
+    background-image: url('../../../assets/img/login-img.png'); /* Ruta a la imagen */
+    background-size: cover; /* Ajustar la imagen para cubrir todo el fondo */
+    background-position: center; 
+  }
+  
+h3 {
+    color: #F36E27;
+  }
+
+  input{
+    border-color: #F36E27 !important;
+    color: #F36E27;
+  }
+
+  ::placeholder {
+    color:  #F36E27 ; /* Color del texto en el placeholder */
+  }
+
+  .btn-custom {
+    background-color: #083A5B; /* Cambia el color de fondo del botón */
+    border-color: #083A5B; /* Cambia el color del borde del botón */
+    color: #ffffff; /* Cambia el color del texto del botón */
+  }
+  
+  a{
+    color:  #F36E27 
+  }

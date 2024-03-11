@@ -1,0 +1,71 @@
+<div class="row main-row" >
+    <div class="row">
+        <br/>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+   
+        <input matInput placeholder="Ingrese su búsqueda">
+        <button mat-button matSuffix aria-label="Buscar">
+          <mat-icon>search</mat-icon>
+        </button>
+    
+    </div>
+      <div class="col-sm-4">
+      <button type="button" class="btn btn-custom" type="button" (click)="newdocente()">
+        Nuevo docente
+     </button>
+     </div>
+    </div>
+    <div class="row">
+      <br/>
+      <br/>
+    </div>
+    <div class="row" *ngFor="let item of docentesList">
+      <div class="col-sm-4">
+       <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-2 target-image div-center">
+          <img src={{item.foto}}  height="40px"  width="80px"/>
+        </div>
+        <div class="col-sm-6 target-text">
+          <p class="title-text">{{item.nombre}}</p>
+          <p class="subtitle-tex">{{item.apellido}}</p>
+        </div>
+        <div class="col-sm-2">
+        </div>
+       </div>
+  </div>
+  <div class="col-sm-4" *ngIf="item.nombre1!=null">
+    <div class="row">
+     <div class="col-sm-2">
+     </div>
+     <div class="col-sm-2 target-image div-center">
+       <img src={{item.foto1}}   height="40px"  width="80px"/>
+     </div>
+     <div class="col-sm-6 target-text">
+       <p class="title-text">{{item.nombre1}}</p>
+       <p class="subtitle-tex">{{item.apellido1}}</p>
+     </div>
+     <div class="col-sm-2">
+     </div>
+    </div>
+</div>
+<div class="col-sm-4" *ngIf="item.nombre2!=null">
+  <div class="row">
+   <div class="col-sm-2">
+   </div>
+   <div class="col-sm-2 target-image div-center">
+     <img src={{item.foto2}}   height="40px"  width="80px"/>
+   </div>
+   <div class="col-sm-6 target-text">
+     <p class="title-text">{{item.nombre2}}</p>
+     <p class="subtitle-tex">{{item.apellido2}}</p>
+   </div>
+   <div class="col-sm-2">
+   </div>
+  </div>
+</div>
+  </div>
+</div>

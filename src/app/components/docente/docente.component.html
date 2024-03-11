@@ -1,0 +1,180 @@
+<div class="row main-row" >
+    <div class="row">
+      <br/>
+      <br/>
+    </div>
+
+    <div class="row">
+    
+        <div class="col-sm-4" >
+            <div clas="row">
+                <h5 class="text-label" style="text-align: center;">Foto de perfil</h5>
+            </div>
+            <div clas="row"  style="display: grid; justify-content: center;"  >
+                <input type="file" #inputImagen (change)="cargarImagen($event)" hidden>
+                <img src={{this.fileImage}} (click)="seleccionarImagen()"  height="200"  width="300px"/>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div clas="row" style="border-color: black; border: 2Ppx;">
+                <div clas="row"  style="display: grid; justify-content: center;"  >
+                    <h5 class="text-label">Asignaciones escolares</h5>
+                </div>
+               
+                <div clas="row"  style="display: grid; justify-content: center;"  >
+                    <mat-form-field >
+                        <mat-label>Elige un grupo</mat-label>
+                        <mat-select [(value)]="selectedItem" >
+                          <mat-option *ngFor="let item of  itemsGrupos" [value]="item.idContenidoCatalogos">{{item.descripcion}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+                <div class="row" >
+                    <div class="col-sm-2">
+    
+                    </div>
+                    <div class="col-sm-8">
+                        <form [formGroup]="form" >
+                            <div class="row" >
+                            <label class="text-label " for="campo1">Nombre(s)</label>
+                            </div>
+                           
+                            <div class="row" >
+                                <input matInput type="text" formControlName="nombres" aria-label="Montserrat" >
+                            </div>
+                            <br/>
+                            <div class="row" >
+                                <label class="text-label"  for="campo2">Apellido Paterno</label>
+                            </div>
+                           
+                            <div class="row" >
+                                <input   matInput type="text" formControlName="apaterno" aria-label="Montserrat">
+                            </div>
+                            <br/>
+                            <div class="row" >
+                                <label class="text-label"  for="campo2">Apellido Materno</label>
+                            </div>
+                            
+                            <div class="row" >
+                                <input  matInput type="email" formControlName="amaterno" aria-label="Montserrat" >
+                            </div>  
+                            <br/>
+                            <div class="row" >
+                                <label class="text-label"  for="campo2">Fecha de Nacimiento</label>
+                            </div>
+                            
+                            <div class="row" >
+                                <input matInput type="date" formControlName="fnacimiento" aria-label="Montserrat">
+                            </div> 
+                            <br/>
+                            <div class="row">
+                               
+                                <label class="text-label " for="campo3">CURP</label>
+                            </div> 
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <input  id="curp" type="text" value={{this.curpfile}}  name="upload">
+                                </div>
+                                <div class="col-sm-2">                              
+                                    <input type="file" #inputImagenCurp (change)="cargarImagenCurp($event)" hidden>
+                                    <i (click)="seleccionarImagenCurp()" class="fa-solid fa-upload" style="font-size:1.5em;" ></i>
+                                </div>
+                                
+                            </div>
+                            <br/>
+                            <div class="row" >
+                                <label class="text-label"  for="campo2">Teléfono</label>
+                            </div>
+                            
+                            <div class="row" >
+                                <input matInput type="numbe" formControlName="telefono" aria-label="Montserrat">
+                            </div> 
+                            <br/>
+                            <div class="row" >
+                                <label class="text-label"  for="campo2">Correo Electrónico</label>
+                            </div>
+                            
+                            <div class="row" >
+                                <input type="mail" formControlName="email" aria-label="Montserrat">
+                            </div>   
+                          </form>
+                    </div>
+                    
+                      <div class="col-sm-2">
+                        
+                      </div>
+                </div>
+        </div>
+        <div class="col-sm-4 div-border">
+            <div class="row div-center" >
+                    <h5 class="text-label">Datos profesionales</h5>
+            </div>
+            <br/>
+            <div class="row" >
+                <div class="col-sm-2">
+
+                </div>
+                <div class="col-sm-8">
+                    <form [formGroup]="form1">
+                        <div class="row" >
+                            <div class="row">
+                           
+                                <label class="text-label" for="campo3">Cédula profesional</label>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <input id="cedula" type="text" value={{this.cedulafile}}  name="cedula">
+                                </div>
+                                <br/>
+                                <div class="col-sm-2">
+                                    <input type="file" #inputImagenCedula (change)="cargarImagenCedula($event)" hidden>
+                                    <i (click)="seleccionarImagenCedula()" class="fa-solid fa-upload" style="font-size:1.5em;" ></i>
+                                </div>
+                                
+                            </div>
+                            <br/>
+                            <br/>
+                            <div>
+                        <label class="text-label " for="campo1">Anexo</label>
+                        </div>
+                       
+                        <div class="row" >
+                            <input type="text" formControlName="anexo" aria-label="Montserrat">
+                        </div>
+                        </div>
+                      </form>
+                </div>
+                
+                  <div class="col-sm-2">
+                    
+                  </div>
+            </div>
+
+    <br/>
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-8">
+                    <button type="button" class="btn btn-custom-b" type="button" (click)="submit()">
+                        Guardar
+                     </button>
+                </div>
+                
+                 <div class="col-sm-2">
+
+                 </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+ 
+
+

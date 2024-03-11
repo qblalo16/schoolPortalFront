@@ -1,0 +1,130 @@
+<div class="row main-row" >
+    <div class="row">
+      <br/>
+      <br/>
+    </div>
+
+    <div class="row">
+    
+        <div class="col-sm-4">
+            <div class="row" style="margin-left: 20px;">
+                
+                    
+                            <mat-calendar  #calendar [(selected)] = "selectedDate"
+                            (selectedChange)="onchange()">
+                            </mat-calendar>
+            </div> 
+        </div>
+        <div class="col-sm-4">
+            <div class="row" >
+            <div class="col-sm-6">
+            <mat-form-field >
+                <mat-label>Elige un mes</mat-label>
+                <mat-select [(value)]="selectedItem" >
+                  <mat-option *ngFor="let item of  itemsCatalog" [value]="item.idContenidoCatalogos">{{item.descripcion}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+              <div class="col-sm-6">
+                <button type="button" (click)="onchangeMonth()" class="btn btn-custom" type="submit">
+                    Buscar
+                 </button>
+                </div>
+            
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                   
+                    <div class="row div-border-b" style="margin-top: 10px;" *ngFor="let item of  calendarByMonth">
+                <div class="col-sm-2" style="margin-top: 10px;">
+                
+                    <i  class="fa-solid fa-calendar" style="font-size:1.5em;" ></i>
+                </div>
+                <div class="col-sm-8" style="margin-top: 10px;">
+            
+                   <p>{{item.nombreEvento}}</p>
+                   <p>{{item.fechaAlta}}</p>
+                </div>
+                    </div>
+            </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <div class="col-sm-4 div-border">
+            <br/>
+            <br/>
+            <div class="row div-center" >
+                    <h5 class="text-label">Nuevo evento</h5>
+            </div>
+            <br/>
+            <div class="row" >
+                <div class="col-sm-2">
+
+                </div>
+                <div class="col-sm-8">
+                    <form [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="row" >
+                        <label class="text-label " for="campo1">Nombre del evento</label>
+                        </div>
+                       
+                        <div class="row" >
+                            <input id="evento" type="text" name="buildData()">
+                        </div>
+                        <br/>
+                        <div class="row" >
+                            <label class="text-label"  for="campo2">Fecha del evento</label>
+                        </div>
+                        
+                        <div class="row" >
+                            <input   id="fecha" value={{this.selectedDate}} type="text"  name="campo2">
+                        </div>
+                        <br/>
+                        <div class="row">
+                           
+                            <label class="text-label " for="campo3">Subir archivo Calendario</label>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <input id="upload" type="text" value={{this.fileImage}}  name="upload">
+                            </div>
+                            <div class="col-sm-2">
+                                <input type="file" #inputImagen (change)="cargarImagen($event)" hidden>
+                                <i (click)="seleccionarImagen()" class="fa-solid fa-upload" style="font-size:1.5em;" ></i>
+                            </div>
+                            <br/>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-sm-4">
+
+                            </div>
+                            <div class="col-sm-8">
+                                <button type="button" class="btn btn-custom-b" type="submit">
+                                    Guardar
+                                 </button>
+                            </div>
+                            
+                             <div class="col-sm-2">
+
+                             </div>
+                        </div>
+     
+                       
+                       
+                        
+                      </form>
+                </div>
+                
+                  <div class="col-sm-2">
+                    
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+ 
+
+

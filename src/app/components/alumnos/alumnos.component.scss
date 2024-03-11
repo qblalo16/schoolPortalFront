@@ -1,0 +1,80 @@
+::ng-deep .mat-calendar {
+    background-color: #083A5B;
+    color: white;
+  }
+  
+  ::ng-deep .mat-calendar-body-cell-content {
+    color: white;
+    font-weight: bold;
+  }
+
+  ::ng-deep .mat-calendar-body-selected {
+    background-color: darkblue; /* Color de fondo para la fecha seleccionada */
+    color: white; /* Color del texto para la fecha seleccionada */
+  }
+
+::ng-deep .mat-calendar-next-button,
+::ng-deep .mat-calendar-previous-button {
+  color: white; /* Cambia el color según prefieras */
+}
+
+::ng-deep .mat-calendar-table-header .mat-calendar-body-cell-content 
+{
+    color: white; /* Cambia este valor por el color deseado */
+}
+
+::ng-deep .mat-datepicker-calendar-date-text-color{
+  color: white;
+}
+
+.btn-custom {
+  background-color: #F36E27; /* Cambia el color de fondo del botón */
+  border-color: #F36E27; /* Cambia el color del borde del botón */
+  color: #ffffff; /* Cambia el color del texto del botón */
+}
+h5{
+  color: #F36E27;
+}
+label{
+  color: #083A5B;
+}
+
+text-label {
+  color: #F36E27;
+}
+
+text-label-b {
+  color: #083A5B;
+}
+
+.div-center{
+  display: grid;
+  justify-content: center;
+}
+
+
+
+.div-border{
+  border-color: #D1D1D1;
+  border-style: solid;
+  border-width: 1px;
+}
+.font-open{
+  font-family:  'Open Sans', sans-serif;
+  color: #083A5B; 
+}
+.div-border-b{
+  border-color: #083A5B; 
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+
+
+}
+
+.btn-custom-b {
+  background-color: #083A5B; /* Cambia el color de fondo del botón */
+  border-color: #083A5B; /* Cambia el color del borde del botón */
+  color: #ffffff; /* Cambia el color del texto del botón */
+}
+

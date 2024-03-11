@@ -1,0 +1,159 @@
+.navbar-element {
+    display: inline-block;
+    line-height: 1.1;
+    margin-right: 1.5em;
+    vertical-align: middle;
+ }
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+
+ }
+
+ .center-items{
+   display: flex;
+   justify-content: center;
+   text-align: center;
+ }
+
+
+.main {
+    width: 100%;
+    background-color: #fff;
+ }
+ 
+ .side-navbar {
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    background: var(--dark);
+    overflow: hidden;
+    transition: 0.5s ease;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+ }
+ 
+ .side-navbar ul {
+    top: 0;
+    left: 0;
+    width: 100%;
+ }
+ 
+ .side-navbar ul li {
+    width: 100%;
+ }
+ 
+ .side-navbar ul li:hover {
+    background: var(--light);
+ }
+ 
+ .side-navbar ul li:first-child {
+    margin-bottom: 1rem;
+    background: none;
+ }
+ 
+ .side-navbar ul li a {
+    display: flex;
+    width: 100%;
+    color: #fff;
+ }
+ 
+ .side-navbar ul li a .icon {
+    min-width: 60px;
+    display: block;
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+ }
+ 
+ .side-navbar ul li a .text {
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    white-space: nowrap;
+ }
+ 
+ .content {
+    position: absolute;
+    width: calc(100% - 260px);
+    left: 260px;
+    min-height: 100vh;
+    transition: 0.5s ease;
+    background-color: #EEEEEE;
+ }
+ 
+ .top-navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // padding: 7px 5px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    background-color: #efefef;
+    border-bottom: #e2e2e2 solid 1px;
+    height: 7vh;
+    min-height: 55px;
+ }
+ 
+ .profile img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    border: #c2c2c2 solid 1px;
+    cursor: pointer;
+ }
+ 
+ #menu-icon {
+    /*font-size: 34px;
+    cursor: pointer;*/
+ }
+ 
+ .content.active {
+    width: calc(100% - 60px);
+    left: 60px;
+ }
+ 
+ .side-navbar.active {
+    width: 60px;
+ }
+
+ .color-black{
+    color: black;
+    display: flex;
+    align-items: center;
+
+ }
+ .color-black-text{
+    color: black;
+
+ }
+
+ @media (max-width: 1000px) {
+    .content {
+       width: 100%;
+       left: 0;
+    }
+ 
+    .side-navbar {
+       width: 60px;
+       left: -60px;
+    }
+ 
+    .content.active {
+       width: calc(100% - 60px);
+       left: 60px;
+    }
+ 
+    .side-navbar.active {
+       left: 0;
+    }
+ }
