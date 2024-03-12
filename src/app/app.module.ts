@@ -25,6 +25,7 @@ import { DocenteMainComponent } from './components/docente-main/docente-main.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AlumnosMainComponent } from './components/alumnos-main/alumnos-main.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
     declarations: [
@@ -57,7 +58,9 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
       RecaptchaModule,
       RecaptchaFormsModule,
       RouterModule,
-      MatFormFieldModule
+      MatFormFieldModule,
+      MatIconModule,
+      MatSlideToggleModule
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'es-Mx' },
     {provide: RECAPTCHA_SETTINGS, useValue: { siteKey:  '6LeufJUpAAAAAFRCn1-DkuPgQO5kC1Mpo-ASTDRD' as RecaptchaSettings} },

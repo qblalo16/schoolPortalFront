@@ -22,13 +22,15 @@ apaterno: string="";
 nombres: string="";
 constructor(private ws:BackendService,private _snackBar: MatSnackBar,public fb: FormBuilder){
   this.form = this.fb.group({
-    nombres:  [''],
-    apaterno:  [''],
+    matricula: [''], // Agregado basado en tu estructura HTML
+    nombres: [''],
+    apaterno: [''],
     amaterno: [''],
-    fnacimiento:  [''],
-    telefono:  [''],
-    email:  [''],
-    });
+    curp: [''],
+    direccion: [''],
+    codigopostal: [''],
+    fnacimiento: ['']
+  });
     this.form1 =this.fb.group({
       anexo:  [''],
       });
