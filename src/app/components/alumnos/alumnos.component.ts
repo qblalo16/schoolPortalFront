@@ -22,27 +22,46 @@ export class AlumnosComponent  implements OnInit {
   apaterno: string="";
   nombres: string="";
   idEstudiante:number=0;
+  idtutor:number=0;
   imagenContacto:string="";
+  idUsuario:number=0;
+  itemsCatalog:any;
+  selectedRelation:any;
+  tutoresList:any;
+  ngOnInit(): void {
+    this.fileImage='../../../assets/img/perfilAlumno.jpeg';
+    this.ws.getCatlog(3).subscribe((data:any)=>{
+      this.itemsCatalog=data;
+      console.log(data);
+    });
+    this.ws.getContacts(this.idEstudiante).subscribe((data:any)=>{
+      console.log(data);
+      this.tutoresList=data;
+    })
+  }
+
+@ViewChild('inputImagen') inputImagen!: ElementRef;
+@ViewChild('inputImagenCertificadoM') inputImagenCertificadoM!: ElementRef;
+@ViewChild('inputImagenCartilla') inputImagenCartilla!: ElementRef;
+@ViewChild('inputImageContacto') inputImageContacto!: ElementRef;
   constructor(private ws:BackendService, private _snackBar: MatSnackBar,public fb: FormBuilder, public fbM: FormBuilder, public fbP: FormBuilder, ){
     this.form = this.fb.group({
       matricula :  [''],
-      curp:  [''],
+      curp:  ['',[Validators.required, Validators.pattern('^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[A-Z0-9]{18}$')]],
       nombres:  [''],
       apaterno:  [''],
       amaterno: [''],
       fnacimiento:  [''],
       direccion:  [''],
-      codigopostal : [''],
-      telefono:  [''],
-      email:  [''],
+      codigopostal : ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]],
       });
       this.formM = this.fbM.group({
         estatura: [''],
         peso: [''],
         tiposangre: [''],
         alergias: [''],
-        lentes: [''],
-        zapatosO: [''], 
+        lentes: [false],
+        zapatosO: [false], 
       });
 
        this.formP = this.fbP.group({
@@ -53,23 +72,18 @@ export class AlumnosComponent  implements OnInit {
       codigopostal: ['', [Validators.required, Validators.pattern('^[0-9]{5}$')]], // Código postal de 5 dígitos
       fnacimiento: ['', Validators.required],
       celular: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]], // Celular de 10 dígitos
-      curp: ['', [Validators.required, Validators.pattern('^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[A-Z0-9]{2}$')]], // Patrón básico de CURP
+      curp: ['', [Validators.required, Validators.pattern('^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[A-Z0-9]{18}$')]], // Patrón básico de CURP
+      email: ['', [Validators.required]], // Patrón básico de CURP
       emergencia: [false],
       recoger: [false],
       contactoP: [false],
     });
   }
-    ngOnInit(): void {
-      this.fileImage='../../../assets/img/perfilAlumno.jpeg';
-    }
-  
-  @ViewChild('inputImagen') inputImagen!: ElementRef;
-  @ViewChild('inputImagenCertificadoM') inputImagenCertificadoM!: ElementRef;
-  @ViewChild('inputImagenCartilla') inputImagenCartilla!: ElementRef;
-  @ViewChild('inputImageContacto') inputImageContacto!: ElementRef;
+    
   
   submit() {
-  this.ws.saveDocentes(this.buildData()).subscribe((data:any)=>{
+    console.log(this.buildData());
+  this.ws.saveEstudent(this.buildData()).subscribe((data:any)=>{
     this.idEstudiante=data.id;
   console.log(data);
   });
@@ -96,8 +110,89 @@ export class AlumnosComponent  implements OnInit {
   return data;
   }
 
+  buildFichaMedica(){
+    const data={
+        "id": 0,
+        "idEstudiante": this.idEstudiante,
+        "estatura": this.formM.get('estatura')?.value,
+        "tipoSangre": this.formM.get('tiposangre')?.value,
+        "alergias": this.formM.get('alergias')?.value,
+        "peso": this.formM.get('peso')?.value,
+        "lentes": this.formM.get('lentes')?.value,
+        "zapatosOrtopedicos": this.formM.get('zapatosO')?.value,
+        "cerificadoMedico": this.certificadoMedico,
+        "cartillaVacunacion": this.cartillaVacunacion,
+        "fechaAlta": "2024-03-12T08:30:48.358Z",
+        "activo": true
+    }
+    return data;
+  }
+  buildTutor(){
+    const data={
+      "id": 0,
+      "idEstudiante": this.idEstudiante,
+      "idUsuario": this.idUsuario,
+      "nombres": this.formP.get('nombres')?.value,
+      "apellidoPaterno": this.formP.get('apaterno')?.value,
+      "apellidoMaterno": this.formP.get('amaterno')?.value,
+      "fechaNacimiento": this.formP.get('fnacimiento')?.value,
+      "curp": this.formP.get('curp')?.value,
+      "celular": ""+this.formP.get('celular')?.value,
+      "direccion": this.formP.get('direccion')?.value,
+      "codigoPostal": ""+this.formP.get('codigopostal')?.value,
+      "relacionEstudiante": this.selectedRelation.id,
+      "permisoRecoger": this.formP.get('recoger')?.value,
+      "emergencia": this.formP.get('emergencia')?.value,
+      "contactoPrincipal": this.formP.get('contactoP')?.value,
+      "foto": this.imagenContacto,
+      "fechaAlta": "2024-03-12T15:22:36.756Z",
+      "activo": true
+    }
+    return data;
+  }
+  buildContacto(){
+    const data={
+      "id": 0,
+      "idEstudiante": this.idEstudiante,
+      "idTutor": this.idtutor,
+      "fechaAlta": "2024-03-12T15:22:36.716Z",
+      "activo": true
+    }
+    return data;
+  }
+  buildUsuario(){
+    const data={
+      "id": 0,
+    "usuario1": this.formP.get('email')?.value,
+    "password":  uuidv4().substring(0,8),
+    "fechaAlta": "2024-03-11T17:08:40.683",
+    "estatus": 1,
+    "perfil": 2
+    }
+    return data;
+  }
+
+saveContacto(){
+  console.log(this.buildUsuario());
+  this.ws.saveUsuario(this.buildUsuario()).subscribe((data:any)=>{
+    console.log(data);
+    this.idUsuario=data.id;
+    this.ws.saveTutor(this.buildTutor()).subscribe((dataT:any)=>{
+      console.log(data);
+      this.idtutor=dataT.id;
+      this.ws.saveContacto(this.buildContacto()).subscribe((dataC:any)=>{
+        console.log(dataC);
+        this.idtutor=dataC.id;
+        
+      });
+    });
+  });
+}
   saveFichaMedica(){
-    
+    console.log(this.buildFichaMedica());
+    this.ws.saveFichaM(this.buildFichaMedica()).subscribe((data:any)=>{
+      console.log(data);
+    })
   }
   cargarImagen(event:any) {
   

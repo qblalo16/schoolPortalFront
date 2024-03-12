@@ -52,6 +52,11 @@ text-label-b {
   justify-content: center;
 }
 
+.div-center-h-v{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
 
 
 .div-border{
@@ -71,6 +76,13 @@ text-label-b {
 
 
 }
+.div-border-back{
+    border-color: #D1D1D1;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #FFFFFF;
+
+  }
 
 .btn-custom-b {
   background-color: #083A5B; /* Cambia el color de fondo del botón */
@@ -78,3 +90,13 @@ text-label-b {
   color: #ffffff; /* Cambia el color del texto del botón */
 }
 
+.title-text{
+    font-size: small;
+    font-style: bold;
+    
+
+  }
+  .subtitle-tex{
+    font-size:x-small;
+   margin-top: -10%;
+  }

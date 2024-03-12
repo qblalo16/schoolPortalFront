@@ -9,7 +9,7 @@
         <div class="col-sm-4 div-border">
             <div class="row" style="display: grid; justify-content: right;" >
 
-                <i (click)="saveStudent()" class="fa-solid fa-save" style="font-size:1.5em;" ></i>
+                <i (click)="submit()"  class="fa-solid fa-save" style="font-size:1.5em;" ></i>
                 
                 <br/>
             </div>
@@ -62,7 +62,7 @@
                             </div>
                             
                             <div class="row" >
-                                <input matInput type="text" formControlName="curp" aria-label="Montserrat">
+                                <input matInput type="text" maxlength="18" formControlName="curp" aria-label="Montserrat">
                             </div> 
                             <br/>
                             <div class="row" >
@@ -78,7 +78,7 @@
                             </div>
                             
                             <div class="row" >
-                                <input matInput type="number" formControlName="codigopostal" aria-label="Montserrat">
+                                <input matInput type="text" maxlength="5" formControlName="codigopostal" aria-label="Montserrat">
                             </div> 
                             <br/>
                             <div class="row" >
@@ -146,20 +146,24 @@
                             </div> 
                             <br/>
                             <div class="row">
-                               
-                                <label class="text-label " for="campo3">Usa lentes</label>
-                            </div> 
-                            <div class="row" >
-                                <input matInput type="text" formControlName="lentes" aria-label="Montserrat">
-                            </div> 
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Zapatos ortopédicos</label>
+                            <div class="col-sm-10">
+                                <label for="miSwitch">Usa lentes</label>
+                            </div>
+                            <div class="col-sm-2">                              
+                                <mat-slide-toggle id="lentes"></mat-slide-toggle>
                             </div>
                             
-                            <div class="row" >
-                                <input matInput type="numbe" formControlName="zapatosO" aria-label="Montserrat">
-                            </div> 
+                        </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-sm-10">
+                                    <label for="miSwitch">Zapatos ortopédicos</label>
+                                </div>
+                                <div class="col-sm-2">                              
+                                    <mat-slide-toggle id="zapatosO"></mat-slide-toggle>
+                                </div>
+                                
+                            </div>
                             <br/>
                             <div class="row" >
                                 <label class="text-label"  for="campo2">Certificado médico</label>
@@ -203,7 +207,7 @@
         <div class="col-sm-3 div-border">
             <div class="row" style="display: grid; justify-content: right;" >
 
-                <i (click)="saveContactos()" class="fa-solid fa-save" style="font-size:1.5em;" ></i>
+                <i (click)="saveContacto()" class="fa-solid fa-save" style="font-size:1.5em;" ></i>
                 
                 <br/>
             </div>
@@ -246,7 +250,7 @@
                         <div class="row" >
                             <label class="text-label"  for="campo2">Dirección</label>
                         </div>
-                        
+                        <br/>
                         <div class="row" >
                             <input matInput type="text" formControlName="direccion" aria-label="Montserrat">
                         </div> 
@@ -256,9 +260,16 @@
                         </div>
                         
                         <div class="row" >
-                            <input matInput type="number" formControlName="codigopostal" aria-label="Montserrat">
+                            <input matInput type="number" maxlength="5" formControlName="codigopostal" aria-label="Montserrat">
                         </div> 
                         <br/>
+                        <mat-form-field >
+                            <mat-label>Relación</mat-label>
+                            <mat-select [(value)]="selectedRelation" >
+                              <mat-option *ngFor="let item of  itemsCatalog" [value]="item.id">{{item.descripcion}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <br/>
                         <div class="row" >
                             <label class="text-label"  for="campo2">Fecha de Nacimiento</label>
                         </div>
@@ -272,7 +283,15 @@
                         </div>
                         
                         <div class="row" >
-                            <input matInput type="number" formControlName="celular" aria-label="Montserrat">
+                            <input matInput type="number" maxlength="10" formControlName="celular" aria-label="Montserrat">
+                        </div> 
+                        <br/>
+                        <div class="row" >
+                            <label class="text-label"  for="campo2">E-mail</label>
+                        </div>
+                        
+                        <div class="row" >
+                            <input matInput type="text" formControlName="email" aria-label="Montserrat">
                         </div> 
                         <br/>
                         <div class="row" >
@@ -280,7 +299,7 @@
                         </div>
                         
                         <div class="row" >
-                            <input matInput type="text" formControlName="curp" aria-label="Montserrat">
+                            <input matInput type="text" maxlength="18" formControlName="curp" aria-label="Montserrat">
                         </div> 
                         <br/>
                         
@@ -336,6 +355,28 @@
                     
                   </div>
             </div>
+
+            <div class="row" *ngFor="let item of tutoresList">
+                <div class="row ">
+                <div class="col-sm-2 target-image div-center-h-v" style="background-color: #D7D7D7;">
+                  <img src={{item.foto}}  height="40px"  width="30px"/>
+                </div>
+                <div class="col-sm-10 target-text div-border-back">
+                    <div class="row">
+                    <div class="col-sm-10">
+                  <p class="title-text">{{item.nombres+" "+ item.apellidoPaterno+ " "+item.apellidoMaterno}} </p>
+                  <p class="subtitle-tex">{{item.celular}}</p>
+                    </div>
+                    <div class="col-sm-2 div-center-h-v">
+                        <img src="../../../assets/img/okBtn.png" height="20px"  width="20px"/>
+                      </div>
+                    </div>
+                </div>
+              
+                
+            </div>
+                <div class="row"><br/></div>
+               </div>
         </div>
 
             

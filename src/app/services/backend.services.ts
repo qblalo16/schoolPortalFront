@@ -69,6 +69,89 @@ public saveDocentes(docente:any){
   });
 }
 
+public saveEstudent(estudent:any){
+  return this.httpClient.post(environment.Backend + 'api/Estudiante/', estudent,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+
+public updateEstudent(estudent:any){
+  return this.httpClient.put(environment.Backend + 'api/Estudiante/', estudent,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+
+  public saveFichaM(fichaM:any){
+    return this.httpClient.post(environment.Backend + 'api/FichaMedica/', fichaM,{
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+}
+public updateFichaM(fichaM:any){
+  return this.httpClient.put(environment.Backend + 'api/FichaMedica/', fichaM,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+
+public saveTutor(tutor:any){
+  return this.httpClient.post(environment.Backend + 'api/Tutor/', tutor,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+public updateTutor(tutor:any){
+return this.httpClient.put(environment.Backend + 'api/Tutor/', tutor,{
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+}
+
+public saveContacto(contacto:any){
+  return this.httpClient.post(environment.Backend + 'api/Contacto/', contacto,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+public getContacts(idEstudiante:number){
+  return this.httpClient.get(environment.Backend + 'api/Tutor/GetTutorByStudent/'+idEstudiante,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+public updateContacto(contacto:any){
+return this.httpClient.put(environment.Backend + 'api/Contacto/', contacto,{
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+}
+
+public saveUsuario(usuario:any){
+  return this.httpClient.post(environment.Backend + 'api/Usuario/', usuario,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+public ipdateUsuario(usuario:any){
+return this.httpClient.put(environment.Backend + 'api/Usuario/', usuario,{
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
+}
+
 public login(user:any){
   return this.httpClient.post(environment.Backend + 'api/Usuario/Login', user,{
     headers: {
