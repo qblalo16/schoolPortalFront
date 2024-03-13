@@ -16,12 +16,12 @@ export class HomeComponent {
   public fullName: string = "";
   public mouseout: boolean = true;
   public modules: Array<any> = [
-    { ModuleName: 'Grados/Grupos', Path: 'grade-group' , Icon: 'fa-solid fa-university' },
-    { ModuleName: 'Docentes', Path: 'docentes-main' , Icon: 'fa-solid fa-users' },
-    { ModuleName: 'Alumnos', Path: 'alumnos-main' , Icon: 'fa-solid  fa-graduation-cap' },
-    { ModuleName: 'Calendario', Path: 'calendario' , Icon: 'fa-solid fa-calendar' },
-    { ModuleName: 'Finanzas', Path: 'finanzas' , Icon: 'fa-solid fa-credit-card-alt' },
-    { ModuleName: 'Asistencia', Path: 'asistencia-main' , Icon: 'fa-solid fa-user' },
+    {Id:1, ModuleName: 'Grados/Grupos', Path: 'grade-group' , Icon: 'fa-solid fa-university', IsActive:false },
+    { Id:2,ModuleName: 'Docentes', Path: 'docentes-main' , Icon: 'fa-solid fa-users' , IsActive:false  },
+    {Id:3, ModuleName: 'Alumnos', Path: 'alumnos-main' , Icon: 'fa-solid  fa-graduation-cap', IsActive:false  },
+    { Id:4,ModuleName: 'Calendario', Path: 'calendario' , Icon: 'fa-solid fa-calendar', IsActive:false  },
+    {Id:5, ModuleName: 'Finanzas', Path: 'finanzas' , Icon: 'fa-solid fa-credit-card-alt',IsActive:false  },
+    {Id:6, ModuleName: 'Asistencia', Path: 'asistencia-main' , Icon: 'fa-solid fa-user', IsActive:false  },
   ];
   public logoCenter = {
     height: '55px',
@@ -39,28 +39,22 @@ export class HomeComponent {
     //this.initUserInfo();
     var user=localStorage.getItem('usuario');
     this.fullName=user!;
-    const module : Module={
-      id:0,
-      isVisible: false,
-      moduleName:"Grados/Grupos",
-      path:'grade-group',
-      icon:'account_balance',
-      registerDate:'',
-      moduleProfiles:[],
-      selected:false
-    };
-   //this.modules.push(module);
-   console.log(this.modules);
+   
   }
 
   ngAfterViewInit(): void {
-    console.log(this.modules);
     this.sideNavbar!.nativeElement.classList.toggle('active');
     this.content!.nativeElement.classList.toggle('active');
   }
 
-  public redirect(path: string) {
-    this.router.navigate([`home/${path}`]);
+  public redirect(module:any) {
+   var item = this.modules.find(x=>(x.IsActive));
+   if(item!=null){
+    item.IsActive=false;
+   }
+    module.IsActive=true;
+    this.router.navigate([`home/${module.Path}`]);
+    
   }
 
   private initUserInfo() {
@@ -104,6 +98,7 @@ export class HomeComponent {
     this.mouseout = key == 'mouseout';
     this.sideNavbar!.nativeElement.classList.toggle('active');
     this.content!.nativeElement.classList.toggle('active');
+   
   }
 
   logout(){

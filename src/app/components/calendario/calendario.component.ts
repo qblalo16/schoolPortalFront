@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AnonymousCredential, BlobServiceClient, BlobUploadCommonResponse } from '@azure/storage-blob';
 import { v4 as uuidv4 } from 'uuid';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -41,15 +42,17 @@ return data;
   
 
   
-  constructor(private ws:BackendService,private _snackBar: MatSnackBar){
+  constructor(private ws:BackendService,private _snackBar: MatSnackBar, private spinner: NgxSpinnerService, ){
    this.form = new FormGroup({
     evento: new FormControl('evento'),
     });
   }
   ngOnInit(): void {
+    this.spinner.show();
     this.ws.getCatlog(2).subscribe((data:any)=>{
       this.itemsCatalog=data;
       console.log(data);
+      this.spinner.hide();
     });
   }
   catalogMonths:any;

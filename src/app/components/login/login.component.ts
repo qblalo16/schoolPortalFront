@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ReCaptchaRequest } from '../../types/ReCaptchaRequest';
 import {BackendService } from '../../services/backend.services'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { Router } from '@angular/router';
 import { Module } from '../../types/module';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +16,8 @@ export class LoginComponent implements OnInit {
 isDisabled: boolean=true;
 public form!: FormGroup;
 public modules: Array<Module> = [];
-
-constructor(private service: BackendService,private fb: FormBuilder, private router: Router){
+@ViewChild('errorUserModal') public alertModal!: ElementRef;
+constructor(private service: BackendService,private spinner: NgxSpinnerService,private fb: FormBuilder, private router: Router, private modalService: NgbModal){
   this.buildForm(); 
 }
   ngOnInit(): void {
@@ -32,7 +35,9 @@ private buildForm(): void {
     recaptchaReactive: ['', Validators.required],
   });
 }
-
+public closeModal() {
+  this.modalService.dismissAll();
+}
 
 public resolved(captchaResponse: string) {
   console.log(`Resolved captcha with response: ${captchaResponse}`);
@@ -57,10 +62,20 @@ public resolved(captchaResponse: string) {
 }
 login() {
   console.log(this.buildData());
-  this.service.login(this.buildData()).subscribe((data:any)=>{
-    console.log('Login');
+  this.spinner.show();
+  this.service.login(this.buildData()).subscribe({
+    next: (recaptchaResp) => {
+    console.log(recaptchaResp);
     localStorage.setItem('usuario',this.form.get('user')?.value );
+    this.spinner.hide();
     this.router.navigate(['home']);
+    },
+    error: (err) =>{
+      this.spinner.hide();
+      console.log("errror resp" + err);
+      this.modalService.open(this.alertModal, { ariaLabelledBy: 'modal-basic-title', size: 'md' });
+    }
+   
   });
   
 }

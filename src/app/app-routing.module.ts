@@ -11,6 +11,7 @@ import { CalendarioComponent } from './components/calendario/calendario.componen
 import { FinanzasComponent } from './components/finanzas/finanzas.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { AsistenciaMainComponent } from './components/asistencia-main/asistencia-main.component';
 
  const APP_ROUTES: Routes = [
     { path: '', component: LoginComponent },
@@ -23,7 +24,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
         { path: 'alumno', component: AlumnosComponent },
         { path: 'calendario', component: CalendarioComponent },
         { path: 'finanzas', component: FinanzasComponent },
-        { path: 'asistencia-main', component: AsistenciaComponent },
+        { path: 'asistencia-main', component: AsistenciaMainComponent },
         { path: 'docente', component: DocenteComponent },
         ]},
 ];

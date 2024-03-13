@@ -62,3 +62,8 @@
 <div class="row content-up-down"><br/></div>
 </div>
 
+<ng-template #errorUserModal let-modal>
+   <app-danger [tittleMsg]="'Error'" [contentMsg]="'El usuario o contraseña no es correcto'"
+      (confirmAction)="closeModal()">
+   </app-danger>
+</ng-template>

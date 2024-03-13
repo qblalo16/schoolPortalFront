@@ -98,8 +98,8 @@
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
     background-color: #efefef;
     border-bottom: #e2e2e2 solid 1px;
-    height: 7vh;
-    min-height: 55px;
+    height: 10vh;
+    min-height: 80px;
  }
  
  .profile img {
@@ -124,7 +124,9 @@
  
  .side-navbar.active {
     width: 60px;
+    color: #083A5B; 
  }
+
 
  .color-black{
     color: black;

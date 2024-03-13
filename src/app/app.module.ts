@@ -16,7 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NuevoGrupoComponent } from './components/nuevo-grupo/nuevo-grupo.component';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatPseudoCheckbox, MatPseudoCheckboxModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -26,6 +26,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AlumnosMainComponent } from './components/alumnos-main/alumnos-main.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { AsistenciaComponent } from './components/asistencia/asistencia.component';
+import { AsistenciaMainComponent } from './components/asistencia-main/asistencia-main.component';
+import { ConfirmComponent } from './components/SPA/confirm/confirm.component';
+import { DangerComponent } from './components/SPA/danger/danger.component';
+import { InfoComponent } from './components/SPA/info/info.component';
+import { SuccessComponent } from './components/SPA/success/success.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @NgModule({
     declarations: [
@@ -38,7 +49,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
       DocenteComponent,
       DocenteMainComponent,
       AlumnosMainComponent,
-      AlumnosComponent
+      AlumnosComponent,
+      AsistenciaComponent,
+      AsistenciaMainComponent,
+      ConfirmComponent,
+      DangerComponent,
+      InfoComponent,
+      SuccessComponent
     ],
     imports: [
       APP_ROUTING,
@@ -60,7 +77,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
       RouterModule,
       MatFormFieldModule,
       MatIconModule,
-      MatSlideToggleModule
+      MatSlideToggleModule,
+      MatTableModule,
+      MatTooltipModule,
+      NgxSpinnerModule,
+      MatCheckboxModule
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'es-Mx' },
     {provide: RECAPTCHA_SETTINGS, useValue: { siteKey:  '6LeufJUpAAAAAFRCn1-DkuPgQO5kC1Mpo-ASTDRD' as RecaptchaSettings} },

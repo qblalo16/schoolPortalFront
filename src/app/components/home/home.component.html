@@ -1,7 +1,7 @@
 <div class="top-navbar" style="background-color: #083A5B;">
     <div id="menu-icon">
        <li id="logoDiv">
-          <div class="icon"><img src="../../../assets/img/school-logo.png" height="50px"></div>
+          <div class="icon"><img src="../../../assets/img/school-logo.png" height="80px"></div>
        </li>
     </div>
     <div class="text-end d-sm-none">
@@ -28,13 +28,15 @@
     </div>
   </div>
   <div class="main ">
-    <div (mouseover)="onMenuClick('mouseover')" style="margin-left: 25px;" (mouseout)="onMenuClick('mouseout')" class="side-navbar" #sideNavbar id="sideNavbar">
-       <ul >
-
+   <div class="row">
+      <br/>
+   </div>
+    <div (mouseover)="onMenuClick('mouseover')" style="margin-left: 22px;" (mouseout)="onMenuClick('mouseout')" class="side-navbar" #sideNavbar id="sideNavbar">
+      <ul >
           <li *ngFor="let module of modules" class="menu">
-             <a href="javascript:void(0)" (click)="redirect(module.Path)">
-                <span class="color-black  center-items"><i class={{module.Icon}}  style="font-size: 2em;"></i></span>
-                <span class="text text-truncate color-black-text text-center">{{ module.ModuleName }}</span>
+             <a href="javascript:void(0)" (click)="redirect(module)">
+                <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}"  style="text-align: center;" class="center-items" ><i class={{module.Icon}}  style="font-size: 2em;"></i></span>
+                <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"   class="text text-truncate color-black-text text-center">{{ module.ModuleName }}</span>
              </a>
           </li>
           <!--div class="text-truncate text-center text-white" style="position: absolute; bottom: 10px; width: 100%;">

@@ -21,12 +21,22 @@
 
 
   .div-center{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: center;
   }
 
-  text-label{
-    color:  #F36E27 
+  .text-label{
+    color:  #F36E27 ;
+   text-align: center;
 
+  }
+
+  .text-label-sc{
+    color:  #F36E27 ;
+  }
+
+  h6{
+    color:  #F36E27 ;
+    text-align: center;
   }

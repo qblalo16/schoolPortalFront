@@ -1,0 +1,14 @@
+<div class="modal-header confirm-modal-header">
+    <h4 id="modal-basic-title fw-bold">{{ tittleMsg }}</h4>
+ </div>
+ <div class="modal-body">
+    <label>{{ contentMsg }}</label>
+ </div>
+ <div class="modal-footer">
+    <button type="button" class="btn d-inline p-2 btn-dark btn-sm text-white float-right mr-2"
+       (click)="confirm()">Aceptar
+    </button>
+    <button type="button" class="btn d-inline p-2 btn-outline-dark btn-sm float-left ml-2 mr-4"
+       (click)="cancel()">Cancelar
+    </button>
+ </div>

@@ -31,7 +31,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/ball-grid-pulse.css",
+              "node_modules/ngx-spinner/animations/ball-fall.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [
@@ -95,7 +96,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/ball-grid-pulse.css",
+              "node_modules/ngx-spinner/animations/ball-fall.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
             ],
             "scripts": [

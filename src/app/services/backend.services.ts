@@ -37,6 +37,14 @@ export class BackendService {
       }
     });
 }
+
+public getDocentesList(){
+  return this.httpClient.get(environment.Backend + 'api/Docente/', {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
 public saveCalendario(calendario:any){
   return this.httpClient.post(environment.Backend + 'api/CalendarioEscolar/', calendario,{
     headers: {
@@ -71,6 +79,21 @@ public saveDocentes(docente:any){
 
 public saveEstudent(estudent:any){
   return this.httpClient.post(environment.Backend + 'api/Estudiante/', estudent,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+
+public getEstudentes(){
+  return this.httpClient.get(environment.Backend + 'api/Estudiante/GetReport',{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
+public getEstudentesList(){
+  return this.httpClient.get(environment.Backend + 'api/Estudiante',{
     headers: {
       'Content-Type': 'application/json'
     }
@@ -115,6 +138,8 @@ return this.httpClient.put(environment.Backend + 'api/Tutor/', tutor,{
 });
 }
 
+
+
 public saveContacto(contacto:any){
   return this.httpClient.post(environment.Backend + 'api/Contacto/', contacto,{
     headers: {
@@ -144,7 +169,7 @@ public saveUsuario(usuario:any){
     }
   });
 }
-public ipdateUsuario(usuario:any){
+public updateUsuario(usuario:any){
 return this.httpClient.put(environment.Backend + 'api/Usuario/', usuario,{
   headers: {
     'Content-Type': 'application/json'
