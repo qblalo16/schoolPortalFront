@@ -12,11 +12,13 @@ import { FinanzasComponent } from './components/finanzas/finanzas.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { AsistenciaMainComponent } from './components/asistencia-main/asistencia-main.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
  const APP_ROUTES: Routes = [
     { path: '', component: LoginComponent },
     { path: 'home', component: HomeComponent,
     children: [
+        {path: 'index', component: HomepageComponent },
         { path: 'grade-group', component: GradeGroupComponent },
         { path: 'new-group', component: NuevoGrupoComponent },
         { path: 'docentes-main', component: DocenteMainComponent },

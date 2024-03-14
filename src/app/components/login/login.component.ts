@@ -68,7 +68,7 @@ login() {
     console.log(recaptchaResp);
     localStorage.setItem('usuario',this.form.get('user')?.value );
     this.spinner.hide();
-    this.router.navigate(['home']);
+    this.router.navigate(['home/index']);
     },
     error: (err) =>{
       this.spinner.hide();
