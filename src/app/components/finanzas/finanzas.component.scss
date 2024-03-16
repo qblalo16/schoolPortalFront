@@ -1,0 +1,44 @@
+.border-in-childs>div {
+    border-bottom: 2px solid #E6E6E6;
+}
+
+.btn-custom {
+    background-color: #083A5B;
+    /* Cambia el color de fondo del botón */
+    border-color: #083A5B;
+    /* Cambia el color del borde del botón */
+    color: #ffffff;
+    /* Cambia el color del texto del botón */
+    min-width: 100px;
+}
+
+.width-cols-in3 {
+    width: 100%;
+}
+
+.dotted:before {
+    content: "";
+    position: absolute;
+    border: 5px dashed #E6E6E6;
+    top: -3px;
+    bottom: -3px;
+    left: -3px;
+    right: -3px;
+}
+
+.border-dotter{
+    border: none;
+    border-top: 1.8px dashed #E6E6E6;
+    border-bottom: 1.8px dashed #E6E6E6;
+    border-radius: 0;
+}
+
+.border-dotter-bottom{
+    border-bottom: 1.8px dashed #E6E6E6;
+}
+
+@media (min-width: 768px) {
+    .width-cols-in3 {
+        width: 29%;
+    }
+}
