@@ -1,0 +1,294 @@
+<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="Colegiaturas">
+            <div class="w-100 py-3">
+                <div class="d-flex gap-5 flex-wrap">
+                    <div class="width-cols-in3">
+                        <div class="d-flex flex-column" style="border: 2px solid #E6E6E6;">
+                            <div class="d-flex justify-content-between align-items-center pb-3 pt-1"
+                                style="border-bottom: 2px solid #E6E6E6;">
+                                <div class="px-3">
+                                </div>
+                                <p class="fw-semibold mb-0 main-color">Colegiaturas</p>
+                                <button mat-button class="btn d-flex justify-content-center align-items-center">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" class="secondary-color"
+                                        fontIcon="add"></mat-icon>
+                                </button>
+                            </div>
+                            <div class="d-flex flex-column overflow-y-auto border-in-childs" style="height: 32rem;">
+                                <div class="px-4 d-flex justify-content-between py-1">
+                                    <div class="d-flex align-items-center">
+                                        <mat-icon style="size: 40px" aria-hidden="false" aria-label="Example home icon"
+                                            class="secondary-color" fontIcon="payments"></mat-icon>
+                                        <div class="ps-3">
+                                            <p class="mb-1 secondary-color">
+                                                Grupo - 2 A
+                                            </p>
+                                            <p class="mb-0 fw-semibold secondary-color">
+                                                Docente - Profesora A
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button mat-button class="btn d-flex justify-content-center align-items-center">
+                                        <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                            fontIcon="arrow_forward_ios"></mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="width-cols-in3">
+                        <div class="d-flex flex-column px-3 pb-3" style="border: 2px solid #E6E6E6;">
+                            <div class="d-flex justify-content-center align-items-center pb-3 pt-1">
+                                <p class="fw-semibold pt-2 mb-0 text-center main-color">Nueva Colegiatura</p>
+                            </div>
+                            <form class="d-flex flex-column gap-3" style="min-height: 32rem;">
+                                <div class="d-flex flex-column gap-2">
+                                    <label class="text-label fw-light secondary-color" for="concept">Concepto</label>
+                                    <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                </div>
+                                <div class="d-flex flex-column gap-2">
+                                    <label class="text-label fw-light secondary-color" for="concept">Monto</label>
+                                    <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                </div>
+                                <div class="d-flex flex-column gap-2">
+                                    <label class="text-label fw-light secondary-color" for="concept">Ciclo
+                                        escolar</label>
+                                    <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                </div>
+                                <span class="text-label fw-light secondary-color" for="concept">Grupos</span>
+                                <div class="overflow-y-auto d-flex flex-column gap-2" style="max-height: 140px;">
+                                    <div class="d-flex flex-row gap-3 align-items-start mx-3">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"
+                                            style="width: 18px; height: 18px; margin-top: 3px;">
+                                        <label for="vehicle1" class="d-flex gap-2 pb-2"
+                                            style="border-bottom: 1px solid #E6E6E6; flex: 1;">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                fontIcon="apartment" class="main-color"></mat-icon>
+                                            1° A - Primaria </label>
+                                    </div>
+                                    <div class="d-flex flex-row gap-3 align-items-start mx-3">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"
+                                            style="width: 18px; height: 18px; margin-top: 3px;">
+                                        <label for="vehicle1" class="d-flex gap-2 pb-2"
+                                            style="border-bottom: 1px solid #E6E6E6; flex: 1;">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                fontIcon="apartment" class="main-color"></mat-icon>
+                                            1° A - Primaria </label>
+                                    </div>
+                                    <div class="d-flex flex-row gap-3 align-items-start mx-3">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"
+                                            style="width: 18px; height: 18px; margin-top: 3px;">
+                                        <label for="vehicle1" class="d-flex gap-2 pb-2"
+                                            style="border-bottom: 1px solid #E6E6E6; flex: 1;">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                fontIcon="apartment" class="main-color"></mat-icon>
+                                            1° A - Primaria </label>
+                                    </div>
+                                    <div class="d-flex flex-row gap-3 align-items-start mx-3">
+                                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"
+                                            style="width: 18px; height: 18px; margin-top: 3px;">
+                                        <label for="vehicle1" class="d-flex gap-2 pb-2"
+                                            style="border-bottom: 1px solid #E6E6E6; flex: 1;">
+                                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                                fontIcon="apartment" class="main-color"></mat-icon>
+                                            1° A - Primaria </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-md-row justify-content-md-end mt-auto">
+                                    <button type="button" class="btn btn-custom" type="button">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="width-cols-in3">
+                        <div class="d-flex flex-column px-3 pb-2" style="border: 2px solid #E6E6E6;">
+                            <div class="d-flex justify-content-between align-items-center pb-3 pt-1">
+                                <div class="px-3">
+                                </div>
+                                <p class="fw-semibold mb-0 main-color">Descuentos Autorizados</p>
+                                <button mat-button class="btn d-flex justify-content-center align-items-center">
+                                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"
+                                        class="secondary-color"></mat-icon>
+                                </button>
+                            </div>
+                            <form class="d-flex flex-column gap-3" style="min-height: 32rem;">
+                                <div class="overflow-hidden d-flex flex-column pb-3 pt-1 px-3"
+                                    style="position: relative;">
+                                    <div class="dotted z-0"></div>
+                                    <div class="d-flex flex-column gap-2 z-1">
+                                        <label class="text-label fw-light secondary-color" for="concept">Porcentaje de
+                                            Descuento</label>
+                                        <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2 z-1">
+                                        <label class="text-label fw-light secondary-color" for="concept">Ciclo
+                                            escolar</label>
+                                        <select class="mx-3 input-main" id="floatingSelect">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                    </div>
+                                </div>
+                                <div class="overflow-hidden d-flex flex-column pb-3 pt-1 px-3"
+                                    style="position: relative;">
+                                    <div class="dotted z-0"></div>
+                                    <div class="d-flex flex-column gap-2 z-1">
+                                        <label class="text-label fw-light secondary-color" for="concept">Porcentaje de
+                                            Descuento</label>
+                                        <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2 z-1">
+                                        <label class="text-label fw-light secondary-color" for="concept">Ciclo
+                                            escolar</label>
+                                        <select class="mx-3 input-main" id="floatingSelect">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <input id="concepto" type="text" name="concept" class="mx-3 input-main">
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-md-row justify-content-md-end mt-auto">
+                                    <button type="button" class="btn btn-custom" type="button">
+                                        Guardar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Estado de cuenta general">
+            <div class="w-100 py-3">
+                <div
+                    class="d-flex gap-3 align-items-center align-items-md-stretch flex-column flex-md-row pb-md-5 gap-3">
+                    <div class="d-flex gap-2 align-items-center">
+                        <label class="text-label fw-light secondary-color" for="concept">Selecciona el concepto de
+                            pago</label>
+                        <select class="mx-3 input-main" id="floatingSelect">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center">
+                        <label class="text-label fw-light secondary-color" for="concept">Selecciona el ciclo
+                            escolar</label>
+                        <select class="mx-3 input-main" id="floatingSelect">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-custom px-5" type="button">
+                        Buscar
+                    </button>
+                </div>
+                <div class="secondary-color">
+                    Resumen por Grado y Grupo
+                </div>
+                <div class="my-3 w-100 main-border d-flex flex-column pb-4">
+                    <p class="mb-0 py-3 px-4 secondary-color " style="border-bottom: 1.7px solid #E6E6E6;">
+                        Grado y Grupo
+                    </p>
+                    <!-- parent main :  accordionExample-->
+                    <div class="accordion d-flex flex-column py-2 gap-3" id="accordionExample">
+                        <div class="accordion-item d-flex flex-column border-0 " style="border-radius: 0;">
+                            <button class="btn w-full text-start justify-content-start gap-3 px-4 border-dotter"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                                1° A - Primaria
+                            </button>
+                            <!-- child collapse main  data-bs-parent:  accordionExample-->
+                            <div id="collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="px-4 py-3 border-dotter-bottom">
+                                    <ul>
+                                        <li>
+                                            <!-- parent id -->
+                                            <div class="accordion d-flex flex-column py-1 gap-3" id="parent1">
+                                                <div class="accordion-item d-flex flex-column border-dotter"
+                                                    style="border-radius: 0;">
+                                                     <!-- ata-bs-target id is necessary -->
+                                                    <button
+                                                        class="btn w-full text-start justify-content-start gap-3 px-2"
+                                                        type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseE" aria-expanded="true"
+                                                        aria-controls="collapseE">
+                                                        Santiago Jimenez Ruiz
+                                                    </button>
+                                                    <!-- parent id and collapse id -->
+                                                    <div id="collapseE" class="accordion-collapse collapse"
+                                                        data-bs-parent="#parent1">
+                                                        <div>
+                                                            <ul>
+                                                                <li>
+                                                                    Pago Inscripción
+                                                                </li>
+                                                                <li>
+                                                                    Pago Inscripción
+                                                                </li>
+                                                                <li>
+                                                                    Pago Inscripción
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <!-- parent id -->
+                                            <div class="accordion d-flex flex-column py-1 gap-3" id="parent2">
+                                                <div class="accordion-item d-flex flex-column border-dotter"
+                                                    style="border-radius: 0;">
+                                                    <!-- ata-bs-target id is necessary -->
+                                                    <button
+                                                        class="btn w-full text-start justify-content-start gap-3 px-2"
+                                                        type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapsea1" aria-expanded="true"
+                                                        aria-controls="collapsea1">
+                                                        Santiago Jimenez Ruiz
+                                                    </button>
+                                                    <!-- parent id  and id-->
+                                                    <div id="collapsea1" class="accordion-collapse collapse"
+                                                        data-bs-parent="#parent2">
+                                                        <div>
+                                                            <ul>
+                                                                <li>
+                                                                    Pago Inscripción
+                                                                </li>
+                                                                <li>
+                                                                    Pago Inscripción
+                                                                </li>
+                                                                <li>
+                                                                    Pago Inscripción
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,54 +1,104 @@
-<div class="top-navbar" style="background-color: #083A5B;">
-    <div id="menu-icon">
-       <li id="logoDiv">
-          <div class="icon"><img src="../../../assets/img/school-logo.png" height="80px"></div>
-       </li>
-    </div>
-    <div class="text-end d-sm-none">
-          <i class="fa-solid fa-gear" style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: white"></i>
-          <i class="fa-solid fa-right-from-bracket" (click)="logout()" style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: #565454"></i>
-    </div>
-    <div class="profile d-none d-sm-block">
-       <div class="navbar-element text-end">
-          <i class="fa-solid fa-gear" style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color:white"></i>
-          <i class="fa-solid fa-right-from-bracket" (click)="logout()" style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: white"></i>
-       </div>
-       <div class="navbar-element">
-          <!--img [src]="profilePhoto" alt="profile-image"-->
-          <input type="file" id="FileGalleryUpload" style="display: none" multiple="false" accept="image/*"
-           name="file" class="inputFile">
-       </div>
-       <div class="navbar-element text-center text-truncate text">
-          <!--label class="fw-bold">{{ fullName || 'Bienvenido'}}</label><br>
-          <small>{{ email }}</small-->
-           
-          <label class="fw-bold" style="color: white">{{ 'Bienvenido, '}}</label><br/>
-          <small style="color: white">{{ fullName }}</small>
-        </div>
-    </div>
-  </div>
-  <div class="main ">
-  
-    <div (mouseover)="onMenuClick('mouseover')" style="margin-left: 22px; margin-top: 3%;"  (mouseout)="onMenuClick('mouseout')" class="side-navbar" #sideNavbar id="sideNavbar">
-      <ul >
-          <li *ngFor="let module of modules" class="menu">
-             <a href="javascript:void(0)" (click)="redirect(module)">
-                <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}"  style="text-align: center;" class="center-items" ><i class={{module.Icon}}  style="font-size: 2em;"></i></span>
-                <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"   class="text text-truncate color-black-text text-center">{{ module.ModuleName }}</span>
-             </a>
-          </li>
-          <!--div class="text-truncate text-center text-white" style="position: absolute; bottom: 10px; width: 100%;">
-             <h4>{{ organizationName | titlecase }}</h4>
-          </div-->
-       </ul>
-    </div>
-    <div class="content" style="background-color: white;" #content id="content">
-       <div class="row panel">
-          <div class="col-md-12">
+<div class="w-100 d-flex h-100">
+   <div class="d-flex flex-column p-2 overflow-y-auto parent gap-4" style="border-right: 1px solid #E6E6E6; transition: 0.5s ease">
+      <div class="icon mx-auto pb-4"><img src="../../../assets/img/school-logo.png" height="80px"></div>
+      <div *ngFor="let module of modules" class="d-flex flex-column">
+         <a href="javascript:void(0)" (click)="redirect(module)" class="d-flex align-items-center">
+            <div style="min-width: 70px;">
+               <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
+               class="center-items"><i class={{module.Icon}} style="font-size: 2em;"></i></span>
+            </div>
+            <div class="child">
+               <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
+               class="text text-truncate color-black-text text-center ">{{ module.ModuleName }}</span>
+            </div>
             
-             <router-outlet></router-outlet>
-          </div>
-       </div>
-    </div>
-  </div>
-  
+         </a>
+      </div>
+   </div>
+   <div style="flex: 1;" class="d-flex flex-column">
+      <div class="d-flex py-3 px-3 justify-content-between" style="background-color: #083A5B;">
+         <div>
+            <!-- elements -->
+         </div>
+         <div class="d-flex gap-5">
+            <div class="d-flex gap-3 align-items-center">
+               <i class="fa-solid fa-gear"
+                  style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color:white"></i>
+               <i class="fa-solid fa-right-from-bracket" (click)="logout()"
+                  style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: white"></i>
+            </div>
+            <input type="file" id="FileGalleryUpload" style="display: none" multiple="false" accept="image/*"
+               name="file" class="inputFile">
+            <div class="text-white text-center text-truncate text">
+               <!--label class="fw-bold">{{ fullName || 'Bienvenido'}}</label><br>
+               <small>{{ email }}</small-->
+
+               <label class="fw-bold" style="color: white">{{ 'Bienvenido, '}}</label><br />
+               <small style="color: white">{{ fullName }}</small>
+            </div>
+         </div>
+      </div>
+      <div class="w-100 overflow-y-auto h-100" style="flex: 0 1 auto;">
+            <router-outlet></router-outlet>
+      </div>
+   </div>
+</div>
+
+<!-- <div class="top-navbar" style="background-color: #083A5B;">
+   <div id="menu-icon">
+      <li id="logoDiv">
+         <div class="icon"><img src="../../../assets/img/school-logo.png" height="80px"></div>
+      </li>
+   </div>
+   <div class="text-end d-sm-none">
+      <i class="fa-solid fa-gear" style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: white"></i>
+      <i class="fa-solid fa-right-from-bracket" (click)="logout()"
+         style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: #565454"></i>
+   </div>
+   <div class="profile d-none d-sm-block">
+      <div class="navbar-element text-end">
+         <i class="fa-solid fa-gear" style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color:white"></i>
+         <i class="fa-solid fa-right-from-bracket" (click)="logout()"
+            style="font-size: 1.7em; margin-right: .5em; margin-top: .2em; color: white"></i>
+      </div>
+      <div class="navbar-element">
+         img [src]="profilePhoto" alt="profile-image"
+         <input type="file" id="FileGalleryUpload" style="display: none" multiple="false" accept="image/*" name="file"
+            class="inputFile">
+      </div>
+      <div class="navbar-element text-center text-truncate text">
+         label class="fw-bold">{{ fullName || 'Bienvenido'}}</label><br>
+          <small>{{ email }}</small
+
+         <label class="fw-bold" style="color: white">{{ 'Bienvenido, '}}</label><br />
+         <small style="color: white">{{ fullName }}</small>
+      </div>
+   </div>
+</div>
+<div class="main ">
+
+   <div (mouseover)="onMenuClick('mouseover')" style="margin-left: 22px; margin-top: 3%;"
+      (mouseout)="onMenuClick('mouseout')" class="side-navbar" #sideNavbar id="sideNavbar">
+      <ul>
+         <li *ngFor="let module of modules" class="menu">
+            <a href="javascript:void(0)" (click)="redirect(module)">
+               <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
+                  class="center-items"><i class={{module.Icon}} style="font-size: 2em;"></i></span>
+               <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
+                  class="text text-truncate color-black-text text-center">{{ module.ModuleName }}</span>
+            </a>
+         </li>
+         <div class="text-truncate text-center text-white" style="position: absolute; bottom: 10px; width: 100%;">
+             <h4>{{ organizationName | titlecase }}</h4>
+          </div
+      </ul>
+   </div>
+   <div class="content" style="background-color: white;" #content id="content">
+      <div class="row panel">
+         <div class="col-md-12">
+
+            <router-outlet></router-outlet>
+         </div>
+      </div>
+   </div>
+</div> -->

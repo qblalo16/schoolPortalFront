@@ -12,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$portal-school-primary: mat.define-palette(mat.$indigo-palette);
-$portal-school-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$portal-school-primary: mat.define-palette(mat.$orange-palette);
+$portal-school-accent: mat.define-palette(mat.$blue-palette, 900, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $portal-school-warn: mat.define-palette(mat.$red-palette);
@@ -40,3 +40,33 @@ $default-font: 'Open Sans', sans-serif;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.main-color{
+  color: #F36E28;
+}
+
+.main-color svg {
+  fill: #F36E28;
+}
+
+.secondary-color{
+  color: #083A5B
+}
+
+.secondary-color svg{
+  fill: #083A5B
+}
+
+.main-border {
+  border: 1.7px solid #E6E6E6;
+}
+
+.input-main{
+  border: 2px solid #D1D1D1;
+  padding: 8px 13px;
+  color: #191919;
+  border-radius: 5px;
+}
+.input-main::placeholder {
+  color: #191919;
+}

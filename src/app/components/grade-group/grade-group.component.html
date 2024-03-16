@@ -1,72 +1,45 @@
-<div class="row main-row">
-    <div class="row">
-        <br/>
+<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5">
+  <div class="d-flex gap-3 align-items-center align-items-md-stretch flex-column flex-md-row pb-md-5">
+    <div class="d-flex">
+      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input">
     </div>
-    <div class="row">
-        <div class="col-sm-4">
-          
-         
-            <input matInput placeholder="Ingrese su búsqueda">
-            <button mat-button matSuffix aria-label="Buscar">
-              <mat-icon>search</mat-icon>
-            </button>
-         
-    </div>
-      <div class="col-sm-4">
-      <button type="button" class="btn btn-custom" type="button" (click)="newGroup()">
-        Nuevo grupo
-     </button>
-     </div>
-    </div>
-    <div class="row">
-      <br/>
-      <br/>
-    </div>
-    <div class="row" *ngFor="let item of groupsItems">
-      <div class="col-sm-4">
-       <div class="row">
-        <div class="col-sm-2">
-        </div>
-        <div class="col-sm-2 target-image div-center">
-          <img src={{item.imgSalon}}  height="15px"  width="25px"/>
-        </div>
-        <div class="col-sm-6 target-text">
-          <p class="title-text">{{item.grupo}}</p>
-          <p class="subtitle-tex">{{item.profesor}}</p>
-        </div>
-        <div class="col-sm-2">
-        </div>
-       </div>
+    <button type="button" class="btn btn-custom" type="button" (click)="newGroup()">
+      Nuevo grupo
+    </button>
   </div>
-  <div class="col-sm-4" *ngIf="item.grupo1!=null">
-    <div class="row">
-     <div class="col-sm-2">
-     </div>
-     <div class="col-sm-2 target-image div-center">
-       <img src={{item.imgSalon1}}  height="15px"  width="25px"/>
-     </div>
-     <div class="col-sm-6 target-text">
-       <p class="title-text">{{item.grupo1}}</p>
-       <p class="subtitle-tex">{{item.profesor1}}</p>
-     </div>
-     <div class="col-sm-2">
-     </div>
+  <div class="row gap-3 gap-md-0" *ngFor="let item of groupsItems">
+    <div class="col-sm-4">
+      <div class="d-flex justify-content-start gap-3">
+        <div class="target-image div-center">
+          <img src={{item.imgSalon}} height="25px"  width="35px" />
+        </div>
+        <div>
+          <p class="title-text mb-1 fw-semibold">{{item.grupo}}</p>
+          <p class="subtitle-tex mb-1">{{item.profesor}}</p>
+        </div>
+      </div>
     </div>
-</div>
-<div class="col-sm-4" *ngIf="item.grupo2!=null">
-  <div class="row">
-   <div class="col-sm-2">
-   </div>
-   <div class="col-sm-2 target-image div-center">
-     <img src={{item.imgSalon2}}  height="15px"  width="25px"/>
-   </div>
-   <div class="col-sm-6 target-text">
-     <p class="title-text">{{item.grupo2}}</p>
-     <p class="subtitle-tex">{{item.profesor}}</p>
-   </div>
-   <div class="col-sm-2">
-   </div>
-  </div>
-</div>
+    <div class="col-sm-4" *ngIf="item.grupo1!=null">
+      <div class="d-flex justify-content-start gap-3">
+        <div class="target-image div-center">
+          <img src={{item.imgSalon1}} height="25px"  width="35px" />
+        </div>
+        <div>
+          <p class="title-text mb-1 fw-semibold">{{item.grupo1}}</p>
+          <p class="subtitle-tex mb-1">{{item.profesor1}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4" *ngIf="item.grupo2!=null">
+      <div class="d-flex justify-content-start gap-3">
+        <div class="target-image div-center">
+          <img src={{item.imgSalon2}} height="25px"  width="35px" />
+        </div>
+        <div>
+          <p class="title-text mb-1 fw-semibold">{{item.grupo2}}</p>
+          <p class="subtitle-tex mb-1">{{item.profesor2}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,81 +1,48 @@
-<div class="row main-row" >
-    <div class="row">
-        <br/>
+<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5">
+  <div class="d-flex gap-3 align-items-center align-items-md-stretch flex-column flex-md-row pb-md-5">
+    <div class="d-flex">
+      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input">
+      <!-- <button mat-button matSuffix aria-label="Buscar">
+        <mat-icon>search</mat-icon>
+      </button> -->
     </div>
-    <div class="row">
-        <div class="col-sm-4">
-   
-        <input matInput placeholder="Ingrese su búsqueda">
-        <button mat-button matSuffix aria-label="Buscar">
-          <mat-icon>search</mat-icon>
-        </button>
-    
-    </div>
-      <div class="col-sm-4">
-      <button type="button" class="btn btn-custom" type="button" (click)="newdocente()">
-        Nuevo docente
-     </button>
-     </div>
-    </div>
-    <div class="row">
-      <br/>
-      <br/>
-    </div>
-    <div class="row" *ngFor="let item of docentesList">
-      <div class="col-sm-4">
-       <div class="row">
-        <div class="col-sm-2">
-        </div>
-        <div class="col-sm-2 target-image div-center">
-          <img src={{item.foto}}  height="40px"  width="80px"/>
-        </div>
-        <div class="col-sm-6 target-text">
-          <p class="title-text">{{item.nombre}}</p>
-          <p class="subtitle-tex">{{item.apellido}}</p>
-        </div>
-        <div class="col-sm-2">
-        </div>
-       </div>
-       <div class="row">
-        <br/>
-       </div>
+    <button type="button" class="btn btn-custom" type="button" (click)="newdocente()">
+      Nuevo docente
+    </button>
   </div>
-  <div class="col-sm-4" *ngIf="item.nombre1!=null">
-    <div class="row">
-     <div class="col-sm-2">
-     </div>
-     <div class="col-sm-2 target-image div-center">
-       <img src={{item.foto1}}   height="40px"  width="80px"/>
-     </div>
-     <div class="col-sm-6 target-text">
-       <p class="title-text">{{item.nombre1}}</p>
-       <p class="subtitle-tex">{{item.apellido1}}</p>
-     </div>
-     <div class="col-sm-2">
-     </div>
+  <div class="row gap-3 gap-md-0" *ngFor="let item of docentesList">
+    <div class="col-sm-4">
+      <div class="d-flex justify-content-start gap-3">
+        <div class="target-image div-center">
+          <img src={{item.foto}} height="40px" width="68px" style="border: 3px solid #083A5B;" />
+        </div>
+        <div>
+          <p class="title-text mb-1 fw-semibold">{{item.nombre}}</p>
+          <p class="subtitle-tex mb-1">{{item.apellido}}</p>
+        </div>
+      </div>
     </div>
-    <div class="row">
-        <br/>
-       </div>
-</div>
-<div class="col-sm-4" *ngIf="item.nombre2!=null">
-  <div class="row">
-   <div class="col-sm-2">
-   </div>
-   <div class="col-sm-2 target-image div-center">
-     <img src={{item.foto2}}   height="40px"  width="80px"/>
-   </div>
-   <div class="col-sm-6 target-text">
-     <p class="title-text">{{item.nombre2}}</p>
-     <p class="subtitle-tex">{{item.apellido2}}</p>
-   </div>
-   <div class="col-sm-2">
-   </div>
-  </div>
-  <div class="row">
-    <br/>
-   </div>
-</div>
-
+    <div class="col-sm-4"  *ngIf="item.nombre1!=null">
+      <div class="d-flex justify-content-start gap-3">
+        <div class="target-image div-center">
+          <img src={{item.foto1}} height="40px" width="60px" style="border: 3px solid #083A5B;" />
+        </div>
+        <div>
+          <p class="title-text mb-1 fw-semibold">{{item.nombre1}}</p>
+          <p class="subtitle-tex mb-1">{{item.apellido1}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4"  *ngIf="item.nombre2!=null">
+      <div class="d-flex justify-content-start gap-3">
+        <div class="target-image div-center">
+          <img src={{item.foto2}} height="40px" width="60px" style="border: 3px solid #083A5B;" />
+        </div>
+        <div>
+          <p class="title-text mb-1 fw-semibold">{{item.nombre2}}</p>
+          <p class="subtitle-tex mb-1">{{item.apellido2}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

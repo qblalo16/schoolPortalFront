@@ -1,3 +1,17 @@
+.parent{
+   transition: all 1s ease;
+}
+
+.parent .child {
+   width: 0px;
+   overflow: hidden;
+   transition: all 1s ease;
+}
+ 
+.parent:hover .child {
+   width: 140px;
+}
+
 .navbar-element {
     display: inline-block;
     line-height: 1.1;
