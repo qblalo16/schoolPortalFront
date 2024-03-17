@@ -1,7 +1,6 @@
-<div class="bg-white p-3 py-md-5 px-md-4 w-100">
-
+<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 main-container-limits">
   <div class="row">
-    <div class="col-12 col-md-4 pb-4">
+    <div class="col-12 col-lg-4 pb-4">
       <div class="d-flex gap-2 align-items-start justify-content-center">
         <button mat-button (click)="subtractDay()" class="btn d-flex justify-content-center align-items-center">
           <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back_ios"></mat-icon>
@@ -11,7 +10,8 @@
           <div class="d-flex lainer-blue overflow-hidden" style="max-height: 38px;">
             <div style="margin-top: -7px;">
               <mat-datepicker #picker></mat-datepicker>
-              <mat-datepicker-toggle matSuffix [for]="picker" class="secondary-color icon-sizing"></mat-datepicker-toggle>
+              <mat-datepicker-toggle matSuffix [for]="picker"
+                class="secondary-color icon-sizing"></mat-datepicker-toggle>
             </div>
             <input class="btn px-0 py-0 secondary-color date-w" matInput [matDatepicker]="picker" [formControl]="date">
           </div>
@@ -21,10 +21,10 @@
         </button>
       </div>
     </div>
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-lg-8">
       <div></div>
     </div>
-    <div class="col-12 col-md-4 mb-4">
+    <div class="col-12 col-md-4 mb-4 mb-md-0 d-flex">
       <div class="w-100 py-3" style="border: 1px solid #E6E6E6;">
         <p class="text-center fw-semibold" style="font-size: 1rem;">
           Asistencia de grupo
@@ -68,46 +68,47 @@
       </div>
     </div>
     <div class="col-12 col-md-8 d-flex">
-      <div class="w-100 py-3" style="border: 1px solid #E6E6E6; flex: 1;">
-        <table mat-table [dataSource]="studentsDS">
-          <!-- Columnas de la tabla -->
+      <div class="w-100 py-3" style="border: 1px solid #E6E6E6; max-width: 99vw;">
+        <div class="overflow-x-auto">
+          <table mat-table [dataSource]="studentsDS">
+            <!-- Columnas de la tabla -->
 
-          <ng-container matColumnDef="Nombres">
-            <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef> Nombre(s) </th>
-            <td mat-cell *matCellDef="let registro"> {{registro.nombres}} </td>
-          </ng-container>
+            <ng-container matColumnDef="Nombres">
+              <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef> Nombre(s) </th>
+              <td mat-cell *matCellDef="let registro"> {{registro.nombres}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="ApellidoPaterno">
-            <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Apellido Paterno</th>
-            <td mat-cell *matCellDef="let registro"> {{registro.aPaterno}} </td>
-          </ng-container>
+            <ng-container matColumnDef="ApellidoPaterno">
+              <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Apellido Paterno</th>
+              <td mat-cell *matCellDef="let registro"> {{registro.aPaterno}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="ApellidoMaterno">
-            <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Apellido Materno</th>
-            <td mat-cell *matCellDef="let registro"> {{registro.aMaterno}} </td>
-          </ng-container>
+            <ng-container matColumnDef="ApellidoMaterno">
+              <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Apellido Materno</th>
+              <td mat-cell *matCellDef="let registro"> {{registro.aMaterno}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="Matricula">
-            <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Matricula</th>
-            <td mat-cell *matCellDef="let registro"> {{registro.matricula}} </td>
-          </ng-container>
+            <ng-container matColumnDef="Matricula">
+              <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Matricula</th>
+              <td mat-cell *matCellDef="let registro"> {{registro.matricula}} </td>
+            </ng-container>
 
-          <ng-container matColumnDef="Actions">
-            <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Acciones</th>
-            <td mat-cell *matCellDef="let row">
-              <i class="fa-solid fa-person-walking" matTooltip="Alumno" style="color: #083A5B;"></i>
-              &nbsp;
-              <i class="fa-solid fa-person-walking" matTooltip="Estado de cuenta"
-                style="color: #083A5B;"></i>
-              &nbsp;
-            </td>
-          </ng-container>
-          <!-- Agrega más columnas según sea necesario -->
+            <ng-container matColumnDef="Actions">
+              <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Acciones</th>
+              <td mat-cell *matCellDef="let row">
+                <i class="fa-solid fa-person-walking" matTooltip="Alumno" style="color: #083A5B;"></i>
+                &nbsp;
+                <i class="fa-solid fa-person-walking" matTooltip="Estado de cuenta" style="color: #083A5B;"></i>
+                &nbsp;
+              </td>
+            </ng-container>
+            <!-- Agrega más columnas según sea necesario -->
 
-          <!-- Filas de la tabla -->
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+            <!-- Filas de la tabla -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>

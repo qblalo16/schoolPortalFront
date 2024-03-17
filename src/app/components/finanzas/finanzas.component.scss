@@ -39,6 +39,12 @@
 
 @media (min-width: 768px) {
     .width-cols-in3 {
+        width: 45%;
+    }
+}
+
+@media (min-width: 992px) {
+    .width-cols-in3 {
         width: 29%;
     }
 }

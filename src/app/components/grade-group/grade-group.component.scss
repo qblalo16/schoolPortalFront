@@ -24,7 +24,12 @@
     background-color: #083A5B; /* Cambia el color de fondo del botón */
     border-color: #083A5B; /* Cambia el color del borde del botón */
     color: #ffffff; /* Cambia el color del texto del botón */
-    width: 200px;
+  }
+
+  @media (min-width: 768px) {
+    .btn-custom {
+      width: 200px;
+    }
   }
 
   .target-image{

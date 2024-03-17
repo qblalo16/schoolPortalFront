@@ -1,10 +1,15 @@
-<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5">
-  <div class="d-flex gap-3 align-items-center align-items-md-stretch flex-column flex-md-row pb-md-5">
-    <div class="d-flex">
-      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input">
+<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5 main-container-limits">
+  <div class="d-flex gap-3 align-items-stretch flex-row pb-md-5">
+    <div class="d-flex flex-1-in-sm">
+      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input width-max-in-sm">
     </div>
     <button type="button" class="btn btn-custom" type="button" (click)="newGroup()">
-      Nuevo grupo
+      <span class="d-none d-md-inline-block">
+        Nuevo grupo
+      </span>
+      <span class="d-md-none px-2">
+        +
+      </span>
     </button>
   </div>
   <div class="row gap-3 gap-md-0" *ngFor="let item of groupsItems">

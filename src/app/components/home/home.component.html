@@ -1,25 +1,23 @@
 <div class="w-100 d-flex h-100">
-   <div class="d-flex flex-column p-2 overflow-y-auto parent gap-4" style="border-right: 1px solid #E6E6E6; transition: 0.5s ease">
+   <div class="d-none d-md-flex flex-column p-2 overflow-y-auto parent gap-4"
+      style="border-right: 1px solid #E6E6E6; transition: 0.5s ease; min-width: 80px;">
       <div class="icon mx-auto pb-4"><img src="../../../assets/img/school-logo.png" height="80px"></div>
       <div *ngFor="let module of modules" class="d-flex flex-column">
          <a href="javascript:void(0)" (click)="redirect(module)" class="d-flex align-items-center">
             <div style="min-width: 70px;">
                <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
-               class="center-items"><i class={{module.Icon}} style="font-size: 2em;"></i></span>
+                  class="center-items"><i class={{module.Icon}} style="font-size: 2em;"></i></span>
             </div>
             <div class="child">
                <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
-               class="text text-truncate color-black-text text-center ">{{ module.ModuleName }}</span>
+                  class="text text-truncate color-black-text text-center ">{{ module.ModuleName }}</span>
             </div>
-            
          </a>
       </div>
    </div>
    <div style="flex: 1;" class="d-flex flex-column">
-      <div class="d-flex py-3 px-3 justify-content-between" style="background-color: #083A5B;">
-         <div>
-            <!-- elements -->
-         </div>
+      <!-- menu desltop -->
+      <div class="d-none d-md-flex py-3 px-3 justify-content-end" style="background-color: #083A5B;">
          <div class="d-flex gap-5">
             <div class="d-flex gap-3 align-items-center">
                <i class="fa-solid fa-gear"
@@ -38,8 +36,36 @@
             </div>
          </div>
       </div>
+      <nav class="navbar fixed-top navbar-expand-lg d-md-none" style="background-color: #083A5B;">
+         <div class="container-fluid">
+            <img src="../../../assets/img/school-logo.png" height="60px">
+            <button class="btn-icon btn me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <div></div>
+               <div></div>
+               <div></div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <div class="navbar-nav overflow-y-auto w-100 bg-white" style="height: calc(100vh - 60px);">
+                  <div *ngFor="let module of modules" class="d-flex flex-column py-3" style="border-bottom: 1px solid #E6E6E6;">
+                     <a href="javascript:void(0)" (click)="redirect(module)" class="d-flex align-items-center">
+                        <div style="min-width: 70px;">
+                           <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#F36E27'}" style="text-align: center;"
+                              class="center-items"><i class={{module.Icon}} style="font-size: 1.5em;"></i></span>
+                        </div>
+                        <div class="child">
+                           <span [ngStyle]="{'color': module.IsActive ? '#F36E27' : '#083A5B'}" style="text-align: center;"
+                              class="text text-truncate color-black-text text-center ">{{ module.ModuleName }}</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </nav>
+      <div class="w-100 d-md-none" style="height: 60px;"></div>
       <div class="w-100 overflow-y-auto h-100" style="flex: 0 1 auto;">
-            <router-outlet></router-outlet>
+         <router-outlet></router-outlet>
       </div>
    </div>
 </div>
