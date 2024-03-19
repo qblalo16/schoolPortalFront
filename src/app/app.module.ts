@@ -36,6 +36,7 @@ import { InfoComponent } from './components/SPA/info/info.component';
 import { SuccessComponent } from './components/SPA/success/success.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FinanzasComponent } from './components/finanzas/finanzas.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
       ConfirmComponent,
       DangerComponent,
       InfoComponent,
-      SuccessComponent
+      SuccessComponent,
+      FinanzasComponent
     ],
     imports: [
       APP_ROUTING,

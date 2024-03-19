@@ -18,11 +18,22 @@
     height: "35px";
    
   }
+  
+  .btn-custom-b {
+    background-color: #083A5B; /* Cambia el color de fondo del botón */
+    border-color: #083A5B; /* Cambia el color del borde del botón */
+    color: #ffffff; /* Cambia el color del texto del botón */
+  }
 
 
   .div-center{
     display: grid;
     align-items: center;
+    justify-content: center;
+  }
+  .div-start{
+    display: grid;
+    align-items: start;
     justify-content: center;
   }
 

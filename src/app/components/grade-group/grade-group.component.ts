@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BackendService } from '../../services/backend.services';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-grade-group',
@@ -8,15 +9,26 @@ import { BackendService } from '../../services/backend.services';
   styleUrl: './grade-group.component.scss'
 })
 export class GradeGroupComponent implements OnInit {
-  constructor( private router: Router, private service:BackendService){
+  constructor( private router: Router, private service:BackendService, private spinner: NgxSpinnerService){
    
   }
+
   groupsItems!:any;
+  
   ngOnInit(): void {
-   this.service.getGroups().subscribe((data:any)=>{
-    console.log( data);
-    this.groupsItems=data;
-   });
+    this.spinner.show();
+    this.service.getGroups().subscribe({
+     next: (data) => {
+      this.groupsItems=data;
+     console.log(data);
+     this.spinner.hide();
+     },
+     error: (err) =>{
+       this.spinner.hide();
+       console.log("errror resp" + err);
+      // this.modalService.open(this.alertModal, { ariaLabelledBy: 'modal-basic-title', size: 'md' });
+     }
+    });
   }
 
   newGroup(){

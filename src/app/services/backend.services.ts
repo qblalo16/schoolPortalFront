@@ -28,6 +28,21 @@ export class BackendService {
       }
     });
   }
+  public saveGroups(grupo: any ){
+    return this.httpClient.post(environment.Backend + 'api/Grupo', grupo,{
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
+
+  public saveStudentGroup(studentGropu: any ){
+    return this.httpClient.post(environment.Backend + 'api/EstudiantesGrupo', studentGropu,{
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
 
 
   public getCatlog(id:number){
