@@ -16,9 +16,9 @@
               <label class="main-color font-14" for="campo2">Grado/Salon</label>
             </div>
             <div class="col-md-7 d-flex">
-              <mat-form-field class="flex-1 font-14" appearance="outline" style="margin-bottom: -1.25em;">
-                <mat-label class="font-14">Grado</mat-label>
-                <mat-select [(value)]="selectGrado" class=" font-14">
+              <mat-form-field class="flex-1 font-14 mat-sm" appearance="outline" style="margin-bottom: -1.25em;">
+                <!-- <mat-label class="font-14">Grado</mat-label> -->
+                <mat-select [(value)]="selectGrado" class=" font-14" placeholder="Grado">
                   <mat-option *ngFor="let item of  itemsCatalog" [value]="item.id">{{item.descripcion}}</mat-option>
                 </mat-select>
               </mat-form-field>
@@ -30,8 +30,8 @@
             </div>
             <div class="col-md-7 d-flex">
               <mat-form-field class="flex-1 font-14" appearance="outline" style="margin-bottom: -1.25em">
-                <mat-label class=" font-14">Profesor(a)</mat-label>
-                <mat-select [(value)]="selectProfesor" class=" font-14">
+                <!-- <mat-label class=" font-14">Profesor(a)</mat-label> -->
+                <mat-select [(value)]="selectProfesor" class=" font-14" placeholder="Profesor(a)">
                   <mat-option *ngFor="let item of  itemDocentes" [value]="item.id">{{item.nombres +" "+
                     item.apellidoPaterno+ " "+item.apellidoMaterno}}</mat-option>
                 </mat-select>

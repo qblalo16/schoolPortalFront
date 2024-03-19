@@ -194,8 +194,8 @@
                         <label class="secondary-color fw-semibold font-14" for="">Relación</label>
                         <div class="px-3 d-flex flex-column">
                             <mat-form-field appearance="outline" class="font-14">
-                                <mat-label class="font-14">Relación</mat-label>
-                                <mat-select [(value)]="selectedRelation" class="font-14">
+                                <!-- <mat-label class="font-14"></mat-label> -->
+                                <mat-select [(value)]="selectedRelation" class="font-14" placeholder="Relación">
                                     <mat-option *ngFor="let item of  itemsCatalog"
                                         [value]="item.id">{{item.descripcion}}</mat-option>
                                 </mat-select>

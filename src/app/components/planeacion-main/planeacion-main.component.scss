@@ -46,3 +46,21 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }  
 }
+
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    border-color: #D1D1D1 !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    border-width: 2px !important;
+  }
+  
+  ::ng-deep .mat-mdc-form-field-infix {
+    border-color: #D1D1D1 !important;
+    min-height: 15px !important;
+    border-width: 2px !important;
+  }
+  
+  ::ng-deep .mat-mdc-floating-label {
+    top: 50% !important;
+  }
