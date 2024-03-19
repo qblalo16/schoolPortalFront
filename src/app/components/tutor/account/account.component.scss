@@ -1,0 +1,61 @@
+.border-card-account {
+    border-radius: 10px;
+    border: 1.5px solid #083A5B;
+}
+
+.itemSV {
+    display: flex;
+    justify-content: space-between;
+}
+
+::ng-deep .mat-tab-body-content {
+    overflow: hidden !important;
+}
+
+.descripcion {
+    /*background-color: green;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.descripcion:after {
+    content: " ........................................................................................................................................................................................................................................................................................."
+}
+
+.precio {
+    /*background-color: red;*/
+    flex-shrink: 0;
+}
+
+.limits-a{
+    max-width: 400px;
+}
+
+@media (min-width: 1200px) {
+    .limits-4{
+        flex: 1;
+    }
+    .limit-3{
+        width: 35%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .limits-4{
+        width: 47%;
+    }
+    .limit-3{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .limits-4{
+        width: 100%;
+    }
+    .limits-a{
+        max-width: 300px;
+    }
+}
+

@@ -1,0 +1,13 @@
+.card-outline {
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 30px;
+    border: 2px solid #191919;
+}
+
+@media (max-width: 576px) {
+    .card-outline {
+        width: 100%;
+        min-height: 170px;
+    }
+}

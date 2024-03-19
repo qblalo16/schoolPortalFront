@@ -17,6 +17,13 @@ import { AlumnAttendanceComponent } from './components/alumn-attendance/alumn-at
 import { AlumnAccountComponent } from './components/alumn-account/alumn-account.component';
 import { AlumnContactComponent } from './components/alumn-contact/alumn-contact.component';
 import { PlaneacionMainComponent } from './components/planeacion-main/planeacion-main.component';
+import { HomeComponent as HomeComponentTutor} from './components/tutor/home/home.component';
+import { AccountComponent as AccountComponentTutor} from './components/tutor/account/account.component';
+import { AttendanceComponent as AttendanceComponentTutor} from './components/tutor/attendance/attendance.component';
+import { CalendarComponent as CalendarComponentTutor} from './components/tutor/calendar/calendar.component';
+import { PayComponent } from './components/tutor/pay/pay.component';
+import { PerfilComponent } from './components/tutor/perfil/perfil.component';
+import { HomeTutorComponent } from './components/home-tutor/home-tutor.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: LoginComponent },
@@ -39,6 +46,15 @@ const APP_ROUTES: Routes = [
             { path: 'planeacion', component: PlaneacionMainComponent },
         ]
     },
+    { path: 'tutor', component: HomeComponentTutor, children: [
+        { path: 'cuenta', component: AccountComponentTutor },
+        { path: 'asistencia', component: AttendanceComponentTutor },
+        { path: 'calendario', component: CalendarComponentTutor },
+        { path: 'pagos', component: PayComponent },
+        { path: 'perfil', component: PerfilComponent },
+        { path: 'index', component: HomeTutorComponent }
+    ] },
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });
+
