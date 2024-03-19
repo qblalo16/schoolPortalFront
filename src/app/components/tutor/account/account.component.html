@@ -1,0 +1,373 @@
+<div
+    class="p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="Estado de Cuenta" class="overflow-hidden">
+            <div class="w-100 py-4">
+                <div class="d-flex flex-column w-100 gap-3 gap-md-4">
+                    <div class="d-flex gap-3 flex-column flex-md-row flex-wrap">
+                        <div class="limits-4">
+                            <div class="bg-white d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                                <i class="fa-solid fa-money-bill" style="font-size: 45px; color: #F24727;"></i>
+                                <div>
+                                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Total de cobros</p>
+                                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="limits-4">
+                            <div class="bg-white d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                                <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                                    style="font-size: 45px; color: #158831;"></i>
+                                <div>
+                                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Total de Pagado</p>
+                                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="limits-4">
+                            <div class="bg-white d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                                <i class="fa-sharp fa-solid fa-scale-balanced"
+                                    style="font-size: 45px; color: #1A1A1A;"></i>
+                                <div>
+                                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Saldo</p>
+                                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="limits-4">
+                            <div class="bg-white d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                                <i class="fa-solid fa-calendar-xmark" style="font-size: 45px; color: #1A1A1A;"></i>
+                                <div>
+                                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Saldo vencido</p>
+                                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-md-start mt-4 mt-md-3">
+                        <mat-form-field appearance="outline" class="font-14">
+                            <mat-label style="margin-top: -3px;" class="font-14">Elige un mes</mat-label>
+                            <mat-select [(value)]="selectedMounth" class="font-14">
+                                <mat-option value="option1">Enero</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3">
+                        <div class="flex-1">
+                            <div class=" d-flex flex-column gap-3">
+                                <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                                    <div
+                                        class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account bg-white">
+                                        <i class="fa-solid fa-circle-check"
+                                            style="font-size: 20px; color: #158831;"></i>
+                                        <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                                            style="font-size: 45px; color: #D9A706;"></i>
+                                        <div>
+                                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Pago de Inscripción
+                                            </p>
+                                            <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn" disabled style="border: none !important;">
+                                        <i class="fa-solid fa-cart-shopping"
+                                            style="font-size: 38px; color: #E6E6E6;"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                                    <div
+                                        class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account bg-white">
+                                        <i class="fa-solid fa-circle-minus"
+                                            style="font-size: 20px; color: #F24727;"></i>
+                                        <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                                            style="font-size: 45px; color: #D9A706;"></i>
+                                        <div>
+                                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Pago de Mensualidad
+                                                Enero </p>
+                                            <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn">
+                                        <i class="fa-solid fa-cart-shopping"
+                                            style="font-size: 38px; color: #1A1A1A;"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                                    <div
+                                        class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account bg-white">
+                                        <i class="fa-solid fa-circle-minus"
+                                            style="font-size: 20px; color: #F24727;"></i>
+                                        <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                                            style="font-size: 45px; color: #D9A706;"></i>
+                                        <div>
+                                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Seguro Escolar </p>
+                                            <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn">
+                                        <i class="fa-solid fa-cart-shopping"
+                                            style="font-size: 38px; color: #1A1A1A;"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                                    <div
+                                        class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account bg-white">
+                                        <i class="fa-solid fa-circle-minus"
+                                            style="font-size: 20px; color: #F24727;"></i>
+                                        <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                                            style="font-size: 45px; color: #D9A706;"></i>
+                                        <div>
+                                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Seguro Escolar </p>
+                                            <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                                        </div>
+                                    </div>
+                                    <button class="btn">
+                                        <i class="fa-solid fa-cart-shopping"
+                                            style="font-size: 38px; color: #1A1A1A;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div
+                                class="main-border w-100 bg-white position-relative py-3 pb-4 px-3 px-md-5 d-flex flex-column gap-3 secondary-color overflow-hidden">
+                                <div class="position-absolute d-flex justify-content-start gap-2"
+                                    style="top:3%; left: 89%;">
+                                    <button class="btn p-0 m-0">
+                                        <i class="fa-solid fa-file-pdf secondary-color" style="font-size:1.5em;"></i>
+                                    </button>
+                                    <button class="btn p-0 m-0">
+                                        <i class="fa-solid fa-square-xmark secondary-color"
+                                            style="font-size:1.5em;"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex gap-3 pb-3 mb-2" style="border-bottom: 1px dotted #808080;">
+                                    <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                                        style="font-size: 45px; color: #D9A706;"></i>
+                                    <div>
+                                        <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Concepto: </p>
+                                        <p class="mb-0 pb-0 fw-light secondary-color font-14">Pago de Inscripción
+                                            $1,000.00
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mx-auto limits-a">
+                                    <div class="itemSV">
+                                        <div class='descripcion'>Total a Pagar</div>
+                                        <div class='precio fw-semibold'>$1,000.00</div>
+                                    </div>
+                                </div>
+                                <div class="mx-auto limits-a">
+                                    <div class="itemSV">
+                                        <div class='descripcion'>Pago recibido dd/mm/aa</div>
+                                        <div class='precio fw-semibold'>$1,000.00</div>
+                                    </div>
+                                </div>
+                                <div class="mx-auto limits-a">
+                                    <div class="itemSV">
+                                        <div class='descripcion'>Saldo</div>
+                                        <div class='precio fw-semibold'>$0.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Recibos y Facturas">
+            <div class="w-100 py-4">
+                <div class="d-flex flex-column w-100 gap-3 gap-md-4">
+                    <div class="d-flex flex-column flex-md-row justify-content-md-start mt-4 mt-md-3">
+                        <mat-form-field appearance="outline" class="font-14">
+                            <mat-label style="margin-top: -3px;" class="font-14">Elige un mes</mat-label>
+                            <mat-select [(value)]="selectedMounth" class="font-14">
+                                <mat-option value="option1">Enero</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div
+                        class="flex-1 d-flex px-3 py-2 align-items-center gap-3 gap-md-5 justify-content-center border-card-account bg-white mx-md-5 flex-wrap">
+                        <i class="fa-sharp fa-solid fa-file-invoice-dollar"
+                            style="font-size: 45px; color: #D9A706;"></i>
+                        <div class="text-center">
+                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Concepto
+                            </p>
+                            <p class="mb-0 pb-0 fw-light secondary-color font-14">Pago de Inscripción </p>
+                        </div>
+                        <div class="text-center">
+                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Folio
+                            </p>
+                            <p class="mb-0 pb-0 fw-light secondary-color font-14">FAC23303 </p>
+                        </div>
+                        <div class="text-center">
+                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Fecha
+                            </p>
+                            <p class="mb-0 pb-0 fw-light secondary-color font-14">DD/MM/AAAA</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Monto
+                            </p>
+                            <p class="mb-0 pb-0 fw-light secondary-color font-14">$1,000.00</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn p-0 m-0">
+                                <i class="fa-solid fa-file-pdf" style="font-size: 45px;"></i>
+                            </button>
+                            <button class="btn p-0 m-0">
+                                <i class="fa-solid fa-file-code" style="font-size: 45px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Datos de Facturación">
+            <div class="w-100 py-4">
+                <div class="d-flex gap-3 flex-column flex-md-row">
+                    <div class="limit-3">
+                        <div class="main-border w-100 bg-white py-3 px-3 d-flex flex-column gap-3 overflow-hidden">
+                            <div class="d-flex flex-column gap-2">
+                                <div class="secondary-color fw-semibold font-14" for="tiposangre">RFC</div>
+                                <div class="mx-3 font-14 fw-light secondary-color">
+                                    MACR8705398K4
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gap-2">
+                                <div class="secondary-color fw-semibold font-14" for="tiposangre">Razón Social </div>
+                                <div class="mx-3 font-14 fw-light secondary-color">
+                                    Nombre del titular
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between gap-2">
+                                <label class="secondary-color fw-semibold font-14" for="lentes">Enviar por
+                                    correo</label>
+                                <div class="mx-3">
+                                    <mat-slide-toggle id="lentes" name="lentes"></mat-slide-toggle>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2 justify-content-end mt-4">
+                                <button class="btn p-0 m-0">
+                                    <i class="fa-solid fa-pen-to-square" style="font-size: 18px;"></i>
+                                </button>
+                                <button class="btn p-0 m-0">
+                                    <i class="fa-solid fa-eraser" style="font-size: 18px;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 d-flex">
+                        <div
+                            class="flex-1 main-border w-100 bg-white py-3 pb-4 px-3 d-flex flex-column gap-3 overflow-hidden">
+                            <div class="pb-2 font-16 secondary-color fw-semibold">
+                                Nuevo Registro
+                            </div>
+                            <div class="d-flex gap-3 flex-column flex-md-row">
+                                <div class="flex-1 d-flex flex-column gap-2">
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="reason">Razón Social
+                                        </label>
+                                        <input matInput id="reason" type="text" name="reason"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="rfc">RFC</label>
+                                        <input matInput id="rfc" type="text" name="rfc" class="mx-3 input-main font-14"
+                                            aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="campo3">Domicilio
+                                        </label>
+                                        <input matInput id="campo3" type="text" name="campo3"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="campo4">Número
+                                            exterior</label>
+                                        <input matInput id="campo4" type="text" name="campo4"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="NInt">Número
+                                            interior</label>
+                                        <input matInput id="NInt" type="text" name="NInt"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Colonia
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                </div>
+                                <div class="flex-1 d-flex flex-column gap-2">
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Localidad
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Municipio 
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Estado 
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Código postal 
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Régimen fiscal  
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Uso de CFDI 
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                </div>
+                                <div class="flex-1 d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="lentes">Enviar por
+                                            correo</label>
+                                        <div class="mx-3">
+                                            <mat-slide-toggle id="lentes" name="lentes"></mat-slide-toggle>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Correo eléctronico 
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column gap-2">
+                                        <label class="secondary-color fw-semibold font-14" for="colonia">Teléfono  
+                                        </label>
+                                        <input matInput id="colonia" type="text" name="colonia"
+                                            class="mx-3 input-main font-14" aria-label="Montserrat">
+                                    </div>
+                                    <div class="d-flex flex-column flex-md-row justify-content-md-end px-4 mt-4 mt-md-auto">
+                                        <button type="button" class="btn btn-primary px-4 font-14" style="min-width: none; width: auto;">
+                                            Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

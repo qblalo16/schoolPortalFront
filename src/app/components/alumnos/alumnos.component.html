@@ -1,390 +1,272 @@
-<div class="row main-row" >
-    <div class="row">
-      <br/>
-      <br/>
-    </div>
-
-    <div class="row" style="padding-left: 10%;">
-        
-        <div class="col-sm-4 div-border">
-            <div class="row" style="display: grid; justify-content: right;" >
-
-                <i (click)="submit()"  class="fa-solid fa-save" style="font-size:1.5em;" ></i>
-                
-                <br/>
-            </div>
-            <div class="row" >
-                <h5 class="text-label" style="text-align: center;">Datos del estudiante</h5>
-                <br/>
-                <br/>
-            </div>
-                <div class="row" >
-                    <div class="col-sm-4">
+<div class="bg-white p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
+    <div class="d-flex gap-4 flex-column flex-md-row flex-wrap">
+        <div class="col-m-37 d-flex">
+            <div class="flex-1 main-border px-3 py-4 row position-relative overflow-hidden mx-0">
+                <div class="position-absolute d-flex justify-content-start" style="top:0%; left: 86%;">
+                    <button (click)="submit()"  class="btn">
+                        <i class="fa-solid fa-save" style="font-size:1.5em;"></i>
+                    </button>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="bg-light-subtle w-100" style="height: 120px;">
                         <input type="file" #inputImagen (change)="cargarImagen($event)" hidden>
-                        <img src={{this.fileImage}} (click)="seleccionarImagen()"  height="100"  width="80px"/>
+                        <img src={{this.fileImage}} (click)="seleccionarImagen()" class="object-fit-cover" height="100" width="80px" />
                     </div>
-                    <div class="col-sm-7">
-                        <form [formGroup]="form" >
-                            <div class="row" >
-                                <label class="text-label " for="campo1">Matricula</label>
-                            </div> 
-                                <div class="row" >
-                                    <input matInput type="text" formControlName="matricula" aria-label="Montserrat" >
-                                </div>
-                                <br/>
-                            <div class="row" >
-                                
-                            <label class="text-label " for="campo1">Nombre(s)</label>
-                            </div>
-                           
-                            <div class="row" >
-                                <input matInput type="text" formControlName="nombres" aria-label="Montserrat" >
-                            </div>
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Apellido Paterno</label>
-                            </div>
-                           
-                            <div class="row" >
-                                <input   matInput type="text" formControlName="apaterno" aria-label="Montserrat">
-                            </div>
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Apellido Materno</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input  matInput type="email" formControlName="amaterno" aria-label="Montserrat" >
-                            </div>  
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">CURP</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input matInput type="text" maxlength="18" formControlName="curp" aria-label="Montserrat">
-                            </div> 
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Dirección</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input matInput type="text" formControlName="direccion" aria-label="Montserrat">
-                            </div> 
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Código Postal</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input matInput type="text" maxlength="5" formControlName="codigopostal" aria-label="Montserrat">
-                            </div> 
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Fecha de Nacimiento</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input matInput type="date" formControlName="fnacimiento" aria-label="Montserrat">
-                            </div> 
-                          </form>
-                    </div>
-                    <div class="col-sm-1"></div>
-                    
                 </div>
-           
+                <div class="col-12 col-md-9 d-flex flex-column gap-3">
+                    <h5 class="font-16 text-center fw-semibold main-color">Datos del estudiante</h5>
+                    <form [formGroup]="form" class="d-flex flex-column gap-3">
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="matricula">Matricula</label>
+                            <input matInput id="matricula" type="text" name="matricula"
+                                formControlName="matricula" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="nombres">Nombre(s)</label>
+                            <input matInput id="nombres" type="text" name="nombres"
+                                formControlName="nombres" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="apaterno">Apellido Paterno</label>
+                            <input matInput id="apaterno" type="text" name="apaterno"
+                                formControlName="apaterno" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="amaterno">Apellido Materno</label>
+                            <input matInput id="amaterno" type="text" name="amaterno"
+                                formControlName="amaterno" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="curp">CURP</label>
+                            <input matInput id="curp" type="text" name="curp"
+                                formControlName="curp" class="mx-3 input-main font-14" maxlength="18"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="direccion">Dirección</label>
+                            <input matInput id="direccion" type="text" name="direccion"
+                                formControlName="direccion" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="codigopostal">Código Postal</label>
+                            <input matInput id="codigopostal" type="number" name="codigopostal" maxlength="5"
+                                formControlName="codigopostal" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="secondary-color fw-semibold font-14" for="fnacimiento">Fecha de Nacimiento</label>
+                            <input matInput id="fnacimiento" type="date" name="fnacimiento"
+                                formControlName="fnacimiento" class="mx-3 input-main font-14"
+                                aria-label="Montserrat">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-1" ></div>
-        <div class="col-sm-3 div-border" >
-            <div class="row" style="display: grid; justify-content: right;" >
-
-                <i (click)="saveFichaMedica()" class="fa-solid fa-save" style="font-size:1.5em;" ></i>
-                
-                <br/>
-            </div>
-            <div class="row" >
-                <h5 class="text-label" style="text-align: center;">Ficha médica</h5>
-                <br/>
-                <br/>
-                
-            </div>
-                <div class="row" >
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                        <form [formGroup]="formM" >
-                            <div class="row" >
-                            <label class="text-label " for="campo1">Estatura</label>
-                            </div>
-                           
-                            <div class="row" >
-                                <input matInput type="number" formControlName="estatura" aria-label="Montserrat" >
-                            </div>
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Peso</label>
-                            </div>
-                           
-                            <div class="row" >
-                                <input   matInput type="number" formControlName="peso" aria-label="Montserrat">
-                            </div>
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Tipo de sangre</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input  matInput type="text" formControlName="tiposangre" aria-label="Montserrat" >
-                            </div>  
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Alergias</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <input matInput type="text" formControlName="alergias" aria-label="Montserrat">
-                            </div> 
-                            <br/>
-                            <div class="row">
-                            <div class="col-sm-10">
-                                <label for="miSwitch">Usa lentes</label>
-                            </div>
-                            <div class="col-sm-2">                              
-                                <mat-slide-toggle id="lentes"></mat-slide-toggle>
-                            </div>
-                            
-                        </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <label for="miSwitch">Zapatos ortopédicos</label>
-                                </div>
-                                <div class="col-sm-2">                              
-                                    <mat-slide-toggle id="zapatosO"></mat-slide-toggle>
-                                </div>
-                                
-                            </div>
-                            <br/>
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Certificado médico</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-3">
-                                    <i *ngIf="this.certificadoMedico==''" class="fa-solid fa-file-pdf" style="font-size:1.5em;"></i>
-                                   <a *ngIf="this.certificadoMedico!=''" href={{this.certificadoMedico}} style="color:#F36E27; "> <i class="fa-solid fa-file-pdf" style="font-size:1.5em;" ></i></a>
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="file" #inputImagenCertificadoM (change)="cargarImagenCedula($event)" hidden>
-                                    <i (click)="seleccionarCertificadoM()" class="fa-solid fa-upload" style="font-size:1.5em;" ></i>
-                                </div>
-                                <div class="col-sm-3"></div>
-                            </div>   
-                            <div class="row" >
-                                <label class="text-label"  for="campo2">Cartilla de vacunación</label>
-                            </div>
-                            
-                            <div class="row" >
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-3">
-                                    <i *ngIf="this.cartillaVacunacion==''"  class="fa-solid fa-file-pdf" style="font-size:1.5em;" ></i>
-                                    <a *ngIf="this.cartillaVacunacion!=''" href={{this.cartillaVacunacion}} style="color:#F36E27; "><i  class="fa-solid fa-file-pdf" style="font-size:1.5em;" ></i></a>
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="file" #inputImagenCartilla (change)="cargarImagenCartilla($event)" hidden>
-                                    <i (click)="seleccionarCartilla()" class="fa-solid fa-upload" style="font-size:1.5em;" ></i>
-                                </div>
-                                <div class="col-sm-3"></div>
-                            </div>   
-                          </form>
+        <div class="flex-1 d-flex">
+            <div class="flex-1 main-border px-3 py-4 d-flex flex-column gap-3 position-relative overflow-hidden">
+                <div class="position-absolute d-flex justify-content-start" style="top:0%; left: 86%;">
+                    <button (click)="saveFichaMedica()"  class="btn">
+                        <i class="fa-solid fa-save" style="font-size:1.5em;"></i>
+                    </button>
+                </div>
+                <h5 class="font-16 text-center fw-semibold main-color">Ficha médica</h5>
+                <form [formGroup]="formM" class="d-flex flex-column gap-3">
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="estatura">Estatura</label>
+                        <input matInput id="estatura" type="number" name="estatura"
+                            formControlName="estatura" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
                     </div>
-                    <div class="col-sm-1"></div>
-                    
-                </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="peso">Peso</label>
+                        <input matInput id="peso" type="number" name="peso"
+                            formControlName="peso" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="tiposangre">Tipo de sangre</label>
+                        <input matInput id="tiposangre" type="text" name="tiposangre"
+                            formControlName="tiposangre" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="alergias">Alergias</label>
+                        <input matInput id="alergias" type="text" name="alergias"
+                            formControlName="alergias" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex justify-content-between gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="lentes">Usa lentes</label>
+                        <div class="mx-3">
+                            <mat-slide-toggle id="lentes" name="lentes"></mat-slide-toggle>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="zapatosO">Zapatos ortopédicos</label>
+                        <div class="mx-3">
+                            <mat-slide-toggle id="zapatosO" name="zapatosO"></mat-slide-toggle>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="zapatosO">Certificado médico</label>
+                        <div class="mx-3 d-flex gap-3">
+                            <div>
+                                <i *ngIf="this.certificadoMedico==''" class="fa-solid fa-file-pdf"
+                                    style="font-size:1.5em;"></i>
+                                <a *ngIf="this.certificadoMedico!=''" href={{this.certificadoMedico}}
+                                    style="color:#F36E27; "> <i class="fa-solid fa-file-pdf"
+                                        style="font-size:1.5em;"></i></a>
+                            </div>
+                            <div>
+                                <input type="file" #inputImagenCertificadoM (change)="cargarImagenCedula($event)"
+                                    hidden>
+                                <i (click)="seleccionarCertificadoM()" class="fa-solid fa-upload"
+                                    style="font-size:1.5em;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="zapatosO">Cartilla de vacunación</label>
+                        <div class="mx-3 d-flex gap-3">
+                            <div>
+                                <i *ngIf="this.cartillaVacunacion==''" class="fa-solid fa-file-pdf"
+                                    style="font-size:1.5em;"></i>
+                                <a *ngIf="this.cartillaVacunacion!=''" href={{this.cartillaVacunacion}}
+                                    style="color:#F36E27; "><i class="fa-solid fa-file-pdf"
+                                        style="font-size:1.5em;"></i></a>
+                            </div>
+                            <div>
+                                <input type="file" #inputImagenCartilla (change)="cargarImagenCartilla($event)" hidden>
+                                <i (click)="seleccionarCartilla()" class="fa-solid fa-upload"
+                                    style="font-size:1.5em;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="col-sm-1" ></div>
-        <div class="col-sm-3 div-border">
-            <div class="row" style="display: grid; justify-content: right;" >
-
-                <i (click)="saveContacto()" class="fa-solid fa-save" style="font-size:1.5em;" ></i>
-                
-                <br/>
-            </div>
-            <div class="row div-center" >
-                    <h5 class="text-label">Contactos</h5>
-                    <br/>
-            </div>
-         
-            <div class="row" >
-                <div class="col-sm-1">
-
+        <div class="flex-1 d-flex">
+            <div class="flex-1 main-border px-3 py-3 d-flex flex-column gap-3 position-relative overflow-hidden">
+                <div class="position-absolute d-flex justify-content-start" style="top:0%; left: 86%;">
+                    <button (click)="saveContacto()"  class="btn">
+                        <i class="fa-solid fa-save" style="font-size:1.5em;"></i>
+                    </button>
                 </div>
-                <div class="col-sm-10">
-                    <form [formGroup]="formP" >
-                        <div class="row" >
-                            
-                        <label class="text-label " for="campo1">Nombre(s)</label>
+                <h5 class="font-16 text-center fw-semibold main-color">Contactos</h5>
+                <form [formGroup]="formP" class="d-flex flex-column gap-3">
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="nombres">Nombre(s)</label>
+                        <input matInput id="nombres" type="text" name="nombres"
+                            formControlName="nombres" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="apaterno">Apellido Paterno</label>
+                        <input matInput id="apaterno" type="text" name="apaterno"
+                            formControlName="apaterno" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="amaterno">Apellido Materno</label>
+                        <input matInput id="amaterno" type="text" name="amaterno"
+                            formControlName="amaterno" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="direccion">Dirección</label>
+                        <input matInput id="direccion" type="text" name="direccion"
+                            formControlName="direccion" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="codigopostal">Código Postal</label>
+                        <input matInput id="codigopostal" type="text" name="codigopostal" maxlength="5"
+                            formControlName="codigopostal" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="">Relación</label>
+                        <div class="px-3 d-flex flex-column">
+                            <mat-form-field appearance="outline" class="font-14">
+                                <!-- <mat-label class="font-14"></mat-label> -->
+                                <mat-select [(value)]="selectedRelation" class="font-14" placeholder="Relación">
+                                    <mat-option *ngFor="let item of  itemsCatalog"
+                                        [value]="item.id">{{item.descripcion}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>   
                         </div>
-                       
-                        <div class="row" >
-                            <input matInput type="text" formControlName="nombres" aria-label="Montserrat" >
-                        </div>
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Apellido Paterno</label>
-                        </div>
-                       
-                        <div class="row" >
-                            <input   matInput type="text" formControlName="apaterno" aria-label="Montserrat">
-                        </div>
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Apellido Materno</label>
-                        </div>
-                        
-                        <div class="row" >
-                            <input  matInput type="email" formControlName="amaterno" aria-label="Montserrat" >
-                        </div>  
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Dirección</label>
-                        </div>
-                        <br/>
-                        <div class="row" >
-                            <input matInput type="text" formControlName="direccion" aria-label="Montserrat">
-                        </div> 
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Código Postal</label>
-                        </div>
-                        
-                        <div class="row" >
-                            <input matInput type="number" maxlength="5" formControlName="codigopostal" aria-label="Montserrat">
-                        </div> 
-                        <br/>
-                        <mat-form-field >
-                            <mat-label>Relación</mat-label>
-                            <mat-select [(value)]="selectedRelation" >
-                              <mat-option *ngFor="let item of  itemsCatalog" [value]="item.id">{{item.descripcion}}</mat-option>
-                            </mat-select>
-                          </mat-form-field>
-                          <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Fecha de Nacimiento</label>
-                        </div>
-                        
-                        <div class="row" >
-                            <input matInput type="date" formControlName="fnacimiento" aria-label="Montserrat">
-                        </div> 
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Celular</label>
-                        </div>
-                        
-                        <div class="row" >
-                            <input matInput type="number" maxlength="10" formControlName="celular" aria-label="Montserrat">
-                        </div> 
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">E-mail</label>
-                        </div>
-                        
-                        <div class="row" >
-                            <input matInput type="text" formControlName="email" aria-label="Montserrat">
-                        </div> 
-                        <br/>
-                        <div class="row" >
-                            <label class="text-label"  for="campo2">Curp</label>
-                        </div>
-                        
-                        <div class="row" >
-                            <input matInput type="text" maxlength="18" formControlName="curp" aria-label="Montserrat">
-                        </div> 
-                        <br/>
-                        
-                            <div class="row">
-                                <div class="col-sm-10">
-                                    <label for="miSwitch">Contacto de emergencia</label>
-                                </div>
-                                <div class="col-sm-2">                              
-                                    <mat-slide-toggle id="emergencia"></mat-slide-toggle>
-                                </div>
-                                
-                            </div>
-                      
-                        <br/>
-                        <div class="row">
-                            <div class="col-sm-10">
-                                <label for="miSwitch">Permiso para recoger</label>
-                            </div>
-                            <div class="col-sm-2">                              
-                                <mat-slide-toggle id="recoger"></mat-slide-toggle>
-                            </div>
-                            
-                        </div>
-                  
-                    <br/>
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <label for="miSwitch">Fotografía</label>
-                        </div>
-                        <div class="col-sm-2">     
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="fnacimiento">Fecha de Nacimiento</label>
+                        <input matInput id="fnacimiento" type="date" name="fnacimiento"
+                            formControlName="fnacimiento" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="celular">Celular</label>
+                        <input matInput id="celular" type="number" name="celular" maxlength="10"
+                            formControlName="celular" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14" for="email">E-mail</label>
+                        <input matInput type="email" name="email"
+                            formControlName="email" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <label class="secondary-color fw-semibold font-14">Curp</label>
+                        <input matInput type="text" name="curp" maxlength="18"
+                            formControlName="curp" class="mx-3 input-main font-14"
+                            aria-label="Montserrat">
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <label class="secondary-color fw-semibold font-14" for="miSwitch">Contacto de emergencia</label>
+                        <mat-slide-toggle id="emergencia"></mat-slide-toggle>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <label class="secondary-color fw-semibold font-14" for="miSwitch">Permiso para recoger</label>
+                        <mat-slide-toggle id="recoger"></mat-slide-toggle>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <label class="secondary-color fw-semibold font-14" for="miSwitch">Fotografía</label>
+                        <div class="px-3">
                             <input type="file" #inputImageContacto (change)="cargarFotoContacto($event)" hidden>
-                            <i (click)="seleccionarImagenContacto()" class="fa-solid fa-file-image" style="font-size:1.5em;" ></i>
+                            <i (click)="seleccionarImagenContacto()" class="fa-solid fa-file-image"
+                                style="font-size:1.5em;"></i>
                         </div>
-                        
                     </div>
-              
-                <br/>
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <label for="miSwitch">Contacto principalr</label>
-                        </div>
-                        <div class="col-sm-2">                              
-                            <mat-slide-toggle id="contactoP"></mat-slide-toggle>
-                        </div>
-                        
+                    <div class="d-flex justify-content-between align-items-start">
+                        <label class="secondary-color fw-semibold font-14" for="miSwitch">Contacto principal</label>
+                        <mat-slide-toggle id="contactoP"></mat-slide-toggle>
                     </div>
-              
-                <br/>
-                      </form>
-                </div>
-                
-                  <div class="col-sm-1">
-                    
-                  </div>
+                    <div class="w-100" *ngFor="let item of tutoresList">
+                        <div class="row">
+                            <div class="col-sm-2 target-image div-center-h-v" style="background-color: #D7D7D7;">
+                                <img src={{item.foto}} height="40px" width="30px" />
+                            </div>
+                            <div class="col-sm-10 target-text div-border-back">
+                                <div class="row">
+                                    <div class="col-sm-10 d-flex flex-wrap py-1 align-items-center">
+                                        <p class="w-100 mb-0 pb-0 fw-semibold font-14" style="">{{item.nombres+" "+ item.apellidoPaterno+ "
+                                            "+item.apellidoMaterno}} </p>
+                                        <p class="w-100 mb-0 pb-0 font-12">{{item.celular}}</p>
+                                    </div>
+                                    <div class="col-sm-2 div-center-h-v">
+                                        <img src="../../../assets/img/okBtn.png" height="20px" width="20px" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-
-            <div class="row" *ngFor="let item of tutoresList">
-                <div class="row ">
-                <div class="col-sm-2 target-image div-center-h-v" style="background-color: #D7D7D7;">
-                  <img src={{item.foto}}  height="40px"  width="30px"/>
-                </div>
-                <div class="col-sm-10 target-text div-border-back">
-                    <div class="row">
-                    <div class="col-sm-10">
-                  <p class="title-text">{{item.nombres+" "+ item.apellidoPaterno+ " "+item.apellidoMaterno}} </p>
-                  <p class="subtitle-tex">{{item.celular}}</p>
-                    </div>
-                    <div class="col-sm-2 div-center-h-v">
-                        <img src="../../../assets/img/okBtn.png" height="20px"  width="20px"/>
-                      </div>
-                    </div>
-                </div>
-              
-                
-            </div>
-                <div class="row"><br/></div>
-               </div>
         </div>
-
-            
-
-  
-
     </div>
 </div>
- 
-
-

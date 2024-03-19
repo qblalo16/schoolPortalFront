@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { APP_ROUTING } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_SETTINGS, RecaptchaSettings, RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 import { LoginComponent } from './components/login/login.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -36,7 +37,15 @@ import { InfoComponent } from './components/SPA/info/info.component';
 import { SuccessComponent } from './components/SPA/success/success.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { HomeComponent as HomeComponentTutor} from './components/tutor/home/home.component';
+import { AccountComponent as AccountComponentTutor} from './components/tutor/account/account.component';
+import { AttendanceComponent as AttendanceComponentTutor} from './components/tutor/attendance/attendance.component';
+import { CalendarComponent as CalendarComponentTutor} from './components/tutor/calendar/calendar.component';
+import { PayComponent } from './components/tutor/pay/pay.component';
+import { PerfilComponent } from './components/tutor/perfil/perfil.component'
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
     declarations: [
@@ -55,7 +64,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
       ConfirmComponent,
       DangerComponent,
       InfoComponent,
-      SuccessComponent
+      SuccessComponent,
+      HomeComponentTutor,
+      AccountComponentTutor,
+      // AttendanceComponentTutor,
+      CalendarComponentTutor,
+      // PayComponent,
+      PerfilComponent
     ],
     imports: [
       APP_ROUTING,
@@ -77,11 +92,15 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
       RouterModule,
       MatFormFieldModule,
       MatIconModule,
+      MatButtonModule,
       MatSlideToggleModule,
       MatTableModule,
       MatTooltipModule,
       NgxSpinnerModule,
-      MatCheckboxModule
+      MatCheckboxModule,
+      MatTabsModule,
+      MatExpansionModule,
+      MatInputModule
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'es-Mx' },
     {provide: RECAPTCHA_SETTINGS, useValue: { siteKey:  '6LeufJUpAAAAAFRCn1-DkuPgQO5kC1Mpo-ASTDRD' as RecaptchaSettings} },

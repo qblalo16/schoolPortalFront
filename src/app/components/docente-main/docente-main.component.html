@@ -1,12 +1,9 @@
-<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5">
+<div class="bg-white p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4">
   <div class="d-flex gap-3 align-items-center align-items-md-stretch flex-column flex-md-row pb-md-5">
     <div class="d-flex">
-      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input">
-      <!-- <button mat-button matSuffix aria-label="Buscar">
-        <mat-icon>search</mat-icon>
-      </button> -->
+      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input font-14">
     </div>
-    <button type="button" class="btn btn-custom" type="button" (click)="newdocente()">
+    <button type="button" class="btn btn-custom font-14" type="button" (click)="newdocente()">
       Nuevo docente
     </button>
   </div>
@@ -17,8 +14,8 @@
           <img src={{item.foto}} height="40px" width="68px" style="border: 3px solid #083A5B;" />
         </div>
         <div>
-          <p class="title-text mb-1 fw-semibold">{{item.nombre}}</p>
-          <p class="subtitle-tex mb-1">{{item.apellido}}</p>
+          <p class="title-text mb-1 fw-semibold font-17">{{item.nombre}}</p>
+          <p class="subtitle-tex mb-1 font-13">{{item.apellido}}</p>
         </div>
       </div>
     </div>
@@ -28,8 +25,8 @@
           <img src={{item.foto1}} height="40px" width="60px" style="border: 3px solid #083A5B;" />
         </div>
         <div>
-          <p class="title-text mb-1 fw-semibold">{{item.nombre1}}</p>
-          <p class="subtitle-tex mb-1">{{item.apellido1}}</p>
+          <p class="title-text mb-1 fw-semibold font-17">{{item.nombre1}}</p>
+          <p class="subtitle-tex mb-1 font-13">{{item.apellido1}}</p>
         </div>
       </div>
     </div>
@@ -39,8 +36,8 @@
           <img src={{item.foto2}} height="40px" width="60px" style="border: 3px solid #083A5B;" />
         </div>
         <div>
-          <p class="title-text mb-1 fw-semibold">{{item.nombre2}}</p>
-          <p class="subtitle-tex mb-1">{{item.apellido2}}</p>
+          <p class="title-text mb-1 fw-semibold font-17">{{item.nombre2}}</p>
+          <p class="subtitle-tex mb-1 font-13">{{item.apellido2}}</p>
         </div>
       </div>
     </div>

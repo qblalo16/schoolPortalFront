@@ -1,185 +1,148 @@
-<div class="row main-row"  >
-    <div class="row">
-        <br/>
-        <br/>
-    </div>
-  
-   
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-6">
-        <div class="row target-image div-center" style="height: 150px" >
-          <input type="file" #inputImagen (change)="cargarImagen($event)" hidden>
-          <img src={{this.fileImage}} (click)="seleccionarImagen()"  height="60px"  width="100px"/>
-        </div>
-        <div class="row">
-            <p class="text-label">Fotografía del salón</p>
-        </div>
-      </div>
-        <div class="col-sm-3"></div>
-      </div>
-       </div>
-  
-  <div class="col-sm-4">
+<div class="bg-white p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
   <div class="row">
-    <div class="col-sm-1">
+    <div class="col-12 col-lg-3 d-flex flex-column">
+      <div class="w-100 d-flex justify-content-center align-items-center mb-3 bg-light-subtle order-2 order-lg-1"
+        style="height: 200px">
+        <input type="file" #inputImagen (change)="cargarImagen($event)" hidden>
+        <img src={{this.fileImage}} (click)="seleccionarImagen()" class="cover-image" />
+      </div>
+      <p class="text-start text-md-center order-1 order-lg-2 px-2 mb-1 main-color font-14">Fotografía del salón</p>
     </div>
-    <div class="col-sm-10">
-        <form [formGroup]="formP" >
-          <div class="row" >
-            <div class="col-sm-6" style="display: flex; align-items: center;">
-            <label class="text-label-sc"  for="campo2">Grado/Salon</label>
+    <div class="flex-1 row mx-auto">
+      <div class="col-12 col-md-6">
+        <form [formGroup]="formP" class="d-flex flex-column gap-3">
+          <div class="row">
+            <div class="col-md-5 d-flex align-items-center">
+              <label class="main-color font-14" for="campo2">Grado/Salon</label>
             </div>
-            <div class="col-sm-6">
-              <mat-form-field >
-                <mat-label>Grado</mat-label>
-                <mat-select [(value)]="selectGrado" >
+            <div class="col-md-7 d-flex">
+              <mat-form-field class="flex-1 font-14 mat-sm" appearance="outline" style="margin-bottom: -1.25em;">
+                <!-- <mat-label class="font-14">Grado</mat-label> -->
+                <mat-select [(value)]="selectGrado" class=" font-14" placeholder="Grado">
                   <mat-option *ngFor="let item of  itemsCatalog" [value]="item.id">{{item.descripcion}}</mat-option>
                 </mat-select>
               </mat-form-field>
-              </div>
-
-        </div>
-        <div class="row" >
-          <div class="col-sm-6" style="display: flex; align-items: center;">
-          <label class="text-label-sc"  for="campo2">Prosfesor(a) asignado</label>
-          </div>
-          <div class="col-sm-6">
-            <mat-form-field >
-              <mat-label>Profesor(a)</mat-label>
-              <mat-select [(value)]="selectProfesor" >
-                <mat-option *ngFor="let item of  itemDocentes" [value]="item.id">{{item.nombres +" "+ item.apellidoPaterno+ " "+item.apellidoMaterno}}</mat-option>
-              </mat-select>
-            </mat-form-field>
             </div>
-
-      </div>
-      <div class="row" >
-        <div class="col-sm-6" style="display: flex; align-items: center;">
-          <label class="text-label"  for="campo2">Alumnos asignados</label>
-        </div>
-        <div class="col-sm-6">
-          <input   matInput type="text" formControlName="buscar" aria-label="Montserrat">
           </div>
-
-    </div>
-
-          
-            
-          </form>
-    </div>
-      <div class="col-sm-1">
+          <div class="row">
+            <div class="col-md-5 d-flex align-items-center">
+              <label class="main-color font-14" for="campo2">Prosfesor(a) asignado</label>
+            </div>
+            <div class="col-md-7 d-flex">
+              <mat-form-field class="flex-1 font-14" appearance="outline" style="margin-bottom: -1.25em">
+                <!-- <mat-label class=" font-14">Profesor(a)</mat-label> -->
+                <mat-select [(value)]="selectProfesor" class=" font-14" placeholder="Profesor(a)">
+                  <mat-option *ngFor="let item of  itemDocentes" [value]="item.id">{{item.nombres +" "+
+                    item.apellidoPaterno+ " "+item.apellidoMaterno}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5 d-flex align-items-center">
+              <label class="main-color font-14 text-start" for="campo2">Alumnos asignados</label>
+            </div>
+            <div class="col-md-7 d-flex flex-column">
+              <input matInput type="text" class="flex-1 input-main font-14" formControlName="buscar" aria-label="Montserrat">
+            </div>
+          </div>
+        </form>
       </div>
-  </div>
-  </div>
-  <div class="col-sm-1">
-  </div>
-<div class="col-sm-4">
-  <div class="col-sm-1">
-  </div>
-  <div class="col-sm-10">
-      <form [formGroup]="formP" >
-  <div class="row" >
-    <div class="col-sm-6" style="display: flex; align-items: center;">
-    <label class="text-label-sc"  for="campo2">Nombre del grupo</label>
+      <div class="col-12 col-md-6 mt-3 mt-md-0">
+        <form [formGroup]="formP" class="d-flex flex-column gap-3">
+          <div class="row">
+            <div class="col-md-5 d-flex align-items-center">
+              <label class="main-color font-14" for="campo2">Nombre del grupo</label>
+            </div>
+            <div class="col-md-7 d-flex flex-column">
+              <input matInput type="text" class="flex-1 input-main font-14" formControlName="grupo" aria-label="Montserrat">
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="col-sm-6">
-      <input   matInput type="text" formControlName="grupo" aria-label="Montserrat">
-      </div>
-</div>
-</form>
   </div>
-  <div class="col-sm-1">
-  </div>
-  
-</div>
-  </div>
-  <div class="row">
-    <div class="col-sm-5">
-      <div class="row">
-        <h6>Alumnos</h6>
-      </div>
-     
-      <div class="row">
-        <table mat-table [dataSource]="studentsDS">
+  <div class="d-flex flex-column flex-xl-row gap-3 gap-md-5 w-100">
+    <div class="flex-1">
+      <div class="w-100 container-border-for-sm mt-4 mt-md-0" style="max-width: 99vw;">
+        <h6 class="font-14">Alumnos</h6>
+        <div class="overflow-x-auto">
+          <table mat-table [dataSource]="studentsDS">
             <!-- Columnas de la tabla -->
             <ng-container matColumnDef="Actions">
-              <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>Acciones</th>
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef>Acciones</th>
               <td mat-cell *matCellDef="let row">
-                <mat-checkbox
-                (change)="onchange(row)">
+                <mat-checkbox (change)="onchange(row)">
                 </mat-checkbox>
-                  
+
               </td>
             </ng-container>
-    
+
             <ng-container matColumnDef="Nombre">
-              <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Nombre(s) </th>
-              <td mat-cell *matCellDef="let registro"> {{registro.nombres + " " + registro.apellidoPaterno + " " +registro.apellidoMaterno}} </td>
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef> Nombre(s) </th>
+              <td mat-cell *matCellDef="let registro" class="font-12"> {{registro.nombres + " " + registro.apellidoPaterno + " "
+                +registro.apellidoMaterno}} </td>
             </ng-container>
-              
-              <ng-container matColumnDef="Matricula">
-                <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>Matricula</th>
-                <td mat-cell *matCellDef="let registro"> {{registro.matricula}} </td>
-              </ng-container>
-          
-              <ng-container matColumnDef="CURP">
-                <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>CURP</th>
-                <td mat-cell *matCellDef="let registro"> {{registro.curp}} </td>
-              </ng-container>
-          
-             
+
+            <ng-container matColumnDef="Matricula">
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef>Matricula</th>
+              <td mat-cell *matCellDef="let registro" class="font-12"> {{registro.matricula}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="CURP">
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef>CURP</th>
+              <td mat-cell *matCellDef="let registro" class="font-12"> {{registro.curp}} </td>
+            </ng-container>
+
+
             <!-- Agrega más columnas según sea necesario -->
-          
+
             <!-- Filas de la tabla -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-    </div>
-  </div>
-    <div class="col-sm-1">
-    </div>
-    <div class="col-sm-6">
-      <div class="row">
-        <h6>Alumnos asignados</h6>
+        </div>
       </div>
-      <div class="row">
-        <table mat-table [dataSource]="studentsDS">
+    </div>
+    <div class="flex-1">
+      <div class="w-100 container-border-for-sm mt-4 mt-md-0" style="max-width: 99vw;">
+        <h6 class="font-14">Alumnos asignados</h6>
+        <div class="overflow-x-auto">
+          <table mat-table [dataSource]="studentsDS">
             <!-- Columnas de la tabla -->
             <ng-container matColumnDef="Actions">
-              <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>Acciones</th>
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef>Acciones</th>
               <td mat-cell *matCellDef="let row">
                 <mat-checkbox>
                 </mat-checkbox>
               </td>
             </ng-container>
-    
+
             <ng-container matColumnDef="Nombre">
-              <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Nombre(s) </th>
-              <td mat-cell *matCellDef="let registro"> {{registro.nombres + " " + registro.apellidoPaterno + " " +registro.apellidoMaterno}} </td>
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef> Nombre(s) </th>
+              <td mat-cell *matCellDef="let registro" class="font-12"> {{registro.nombres + " " + registro.apellidoPaterno + " "
+                +registro.apellidoMaterno}} </td>
             </ng-container>
-              
-              <ng-container matColumnDef="Matricula">
-                <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>Matricula</th>
-                <td mat-cell *matCellDef="let registro"> {{registro.matricula}} </td>
-              </ng-container>
-          
-              <ng-container matColumnDef="CURP">
-                <th mat-header-cell class="mat-header-cell" *matHeaderCellDef>CURP</th>
-                <td mat-cell *matCellDef="let registro"> {{registro.curp}} </td>
-              </ng-container>
-          
-             
+
+            <ng-container matColumnDef="Matricula">
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef>Matricula</th>
+              <td mat-cell *matCellDef="let registro" class="font-12"> {{registro.matricula}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="CURP">
+              <th mat-header-cell class="mat-header-cell font-14" *matHeaderCellDef>CURP</th>
+              <td mat-cell *matCellDef="let registro" class="font-12"> {{registro.curp}} </td>
+            </ng-container>
+
+
             <!-- Agrega más columnas según sea necesario -->
-          
+
             <!-- Filas de la tabla -->
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-    </div>
+        </div>
+      </div>
     </div>
   </div>
-  
-  </div>
+</div>
