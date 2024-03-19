@@ -63,3 +63,15 @@ h6 {
 ::ng-deep .mat-mdc-floating-label {
   top: 50% !important;
 }
+
+.input-main:focus {
+  border: 2px solid #F36E28 !important;
+}
+
+::ng-deep .input-main:focus, .input-main:focus-within, .input-main:focus-visible {
+  border: 2px solid #F36E28 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #F36E28 !important;
+}

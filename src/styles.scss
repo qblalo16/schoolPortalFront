@@ -76,9 +76,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 5px;
 }
 
-.input-main:focus {
+.input-main:focus, .input-main:focus-within {
   border: 2px solid #F36E28 !important;
+}
 
+.input-main:focus, .input-main:focus-within, .input-main:focus-visible {
+  border: 2px solid #F36E28 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #F36E28 !important;
 }
 
 .input-main::placeholder {
