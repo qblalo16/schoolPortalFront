@@ -1,0 +1,515 @@
+<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 main-container-limits">
+    <div class="row gap-3 gap-xl-0">
+        <div class="col-12 col-xl-3 d-flex">
+            <!--  -->
+            <div class="flex-1 w-100 main-border py-2 pb-4 d-flex flex-column max-h-card">
+                <div class="py-2 border-bottom-1-gray">
+                    <p class="text-center main-color font-16 fw-semibold">Lista de planeación</p>
+                </div>
+                <div class="d-flex flex-column overflow-y-auto" style="max-height: 86vh;">
+                    <div class="d-flex gap-3 text-start border-bottom-2-gray justify-content-center align-items-start"
+                        style="border-radius: 0;">
+                        <i class="fa-sharp fa-solid fa-clipboard-list secondary-color mt-2"></i>
+                        <div class="d-flex flex-column gap-1">
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                Nivel Educativo: Fase 5
+                            </p>
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                <span class="fw-semibold">PDA:</span>
+                            </p>
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                <span class="fw-semibold">Estatus:</span> Guardado
+                            </p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="p-1 m-0 btn" (click)="initComment()">
+                                <i class="fa-solid fa-eye secondary-color"></i>
+                            </button>
+                            <button class="p-1 m-0 btn">
+                                <i class="fa-solid fa-pen-to-square" style="color: #E6E6E6;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 text-start border-bottom-2-gray justify-content-center align-items-start"
+                        style="border-radius: 0;">
+                        <i class="fa-sharp fa-solid fa-clipboard-list secondary-color mt-2"></i>
+                        <div class="d-flex flex-column gap-1">
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                Nivel Educativo: Fase 5
+                            </p>
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                <span class="fw-semibold">PDA:</span>
+                            </p>
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                <span class="fw-semibold">Estatus:</span> Guardado
+                            </p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="p-1 m-0 btn">
+                                <i class="fa-solid fa-eye secondary-color"></i>
+                            </button>
+                            <button class="p-1 m-0 btn">
+                                <i class="fa-solid fa-pen-to-square" style="color: #E6E6E6;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 text-start border-bottom-2-gray justify-content-center align-items-start"
+                        style="border-radius: 0;">
+                        <i class="fa-sharp fa-solid fa-clipboard-list secondary-color mt-2"></i>
+                        <div class="d-flex flex-column gap-1">
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                Nivel Educativo: Fase 5
+                            </p>
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                <span class="fw-semibold">PDA:</span>
+                            </p>
+                            <p class="pb-0 mb-0 fw-light font-14 secondary-color">
+                                <span class="fw-semibold">Estatus:</span> Guardado
+                            </p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="p-1 m-0 btn">
+                                <i class="fa-solid fa-eye secondary-color"></i>
+                            </button>
+                            <button class="p-1 m-0 btn">
+                                <i class="fa-solid fa-pen-to-square" style="color: #E6E6E6;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-2 pt-5 d-flex justify-content-end px-2 mt-auto">
+                    <button class="btn btn-primary font-14 w-auto px-2" (click)="initForm()">
+                        Nueva Planeación
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-xl-9 d-flex flex-column gap-3">
+            @if(activeStep === 0){
+            <div
+                class="w-100 main-border py-4 py-lg-5 px-4 d-flex flex-column overflow-hidden flex-1 align-items-center">
+                <div class="mx-auto" style="width: 30%;">
+                    <img src="/assets/img/school-logo.png" width="100%" alt="">
+                </div>
+                <p class="secondary-color mb-0 pb-0 font-17 text-center mx-auto w-50">
+                    Crea una nueva planeación o selecciona alguna de la lista para ver o editar
+                </p>
+            </div>
+            }
+            <!-- init form step 1 -->
+            @if(activeStep === 2){
+            <div class="w-100 main-border py-4 px-4 d-flex flex-column overflow-hidden">
+                <div class="grid-container container-limits-input gap-3 gap-md-0 w-100">
+                    <div class="w-100">
+                        <div class="d-flex flex-column gap-2 pb-md-2">
+                            <label class="text-label fw-light secondary-color font-14" for="concept">Nivel
+                                Educativo:</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                    </div>
+                    <div class="grid-container container-limits-2 gap-3 gap-md-0 pb-md-2">
+                        <div class="d-flex flex-column gap-2">
+                            <label class="text-label fw-light secondary-color font-14" for="concept">Grado y
+                                Grupo:</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                        <div class="d-flex flex-column gap-2">
+                            <label class="text-label fw-light secondary-color font-14" for="concept">Duración:</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                    </div>
+                    <div class="w-100">
+                        <div class="d-flex flex-column gap-2 pb-md-2">
+                            <label class="text-label fw-light secondary-color font-14"
+                                for="concept">Metodología:</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                    </div>
+                    <div class="w-100">
+                        <div class="d-flex flex-column gap-2">
+                            <label class="text-label fw-light secondary-color font-14" for="concept">Recursos e
+                                Implicaciones:</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                    </div>
+                    <div class="w-100">
+                        <div class="d-flex flex-column gap-2">
+                            <label class="text-label fw-light secondary-color font-14" for="concept">Proceso de
+                                desarrollo de aprendizaje (PDA)</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                    </div>
+                    <div class="w-100">
+                        <div class="d-flex flex-column gap-2">
+                            <label class="fw-light secondary-color font-14" for="concept">Tipo de proyecto a utilizar y
+                                su organización:</label>
+                            <input id="concepto" type="text" name="concept" class="mx-3 input-main font-14">
+                        </div>
+                    </div>
+                </div>
+                <div class="main-border w-100 border-table my-4 overflow-x-auto">
+                    <table style="min-width:100%;">
+                        <tr>
+                            <th class="fw-light font-16 secondary-color p-2 px-4 text-center">CAMPO</th>
+                            <th class="table-min-w fw-light font-16 secondary-color p-2 text-center">SECUENCIA DE
+                                APRENDIZAJE</th>
+                            <th class="table-min-w fw-light font-16 secondary-color p-2 text-center">CONTENIDO</th>
+                            <th class="table-min-w fw-light font-16 secondary-color p-2 text-center">EJE ARTICULADOR
+                            </th>
+                            <th class="table-min-w fw-light font-16 secondary-color p-2 text-center">PROCESO DE
+                                DESARROLLO DE APRENDIZAJE</th>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+                                    <div class="overflow-hidden" style="width: 60px; height: 60px;">
+                                        <img src="/assets/img/planeacion/image-2.png" width="100%" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+                                    <div class="overflow-hidden" style="width: 60px; height: 60px;">
+                                        <img src="/assets/img/planeacion/image-3.png" width="100%" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+                                    <div class="overflow-hidden" style="width: 60px; height: 60px;">
+                                        <img src="/assets/img/planeacion/image-4.png" width="100%" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex h-100 w-100 justify-content-center align-items-center">
+                                    <div class="overflow-hidden" style="width: 60px; height: 60px;">
+                                        <img src="/assets/img/planeacion/image-5.png" width="100%" alt="">
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-end gap-3">
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Cerrar
+                    </button>
+                    <button (click)="nextStep()" class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+            }
+            <!-- end form step 1 -->
+            <!-- init form step 2 -->
+            <!--  -->
+            @if(activeStep === 3){
+            <div class="w-100 main-border py-4 px-4 d-flex flex-column overflow-hidden">
+                <div class="d-flex flex-column flex-lg-row gap-lg-3 align-items-lg-start">
+                    <div class="d-flex flex-column gap-1">
+                        <label class="text-label fw-light secondary-color font-14 w-100" for="concept">Día:</label>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label style="margin-top: -3px;">Elige un mes</mat-label>
+                            <mat-select [(value)]="selectedMounth">
+                                <mat-option value="option1">Enero</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-flex flex-column flex-lg-row gap-3 align-items-lg-center flex-1">
+                        <div class="d-flex flex-column gap-1 flex-1">
+                            <label class="text-label fw-light secondary-color font-14" for="concept">Secuencia
+                                didáctica:</label>
+                            <textarea matInput placeholder="" class="input-main"></textarea>
+                        </div>
+                        <button class="btn btn-primary font-14 w-auto px-3 mt-lg-3" style="min-width: 120px;">
+                            Añadir
+                        </button>
+                    </div>
+                </div>
+                <div class="main-border w-100 border-table my-4 overflow-x-auto">
+                    <table style="min-width:100%;">
+                        <tr>
+                            <th class="fw-light font-16 secondary-color p-2 px-4 text-center">Día</th>
+                            <th class="table-min-w fw-light font-16 secondary-color p-2 text-center">Secuencia didáctica
+                            </th>
+                            <th class="fw-light font-16 secondary-color p-2 text-center">Opciones</th>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table text-center fw-light secondary-color">Lunes</td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a home icon">
+                                        <mat-icon class="secondary-color">edit_square</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon class="secondary-color">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table text-center fw-light secondary-color">Martes</td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a home icon">
+                                        <mat-icon class="secondary-color">edit_square</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon class="secondary-color">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table text-center fw-light secondary-color">Miercoles</td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a home icon">
+                                        <mat-icon class="secondary-color">edit_square</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon class="secondary-color">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table text-center fw-light secondary-color">Jueves</td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a home icon">
+                                        <mat-icon class="secondary-color">edit_square</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon class="secondary-color">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="min-h-fill-table text-center fw-light secondary-color">Viernes</td>
+                            <td class="min-h-fill-table p-0 m-0">
+                                <div class="d-flex h-100 w-100">
+                                    <textarea matInput placeholder="" class="w-100 p-0 m-0 flex-1 border-0">
+                                    </textarea>
+                                </div>
+                            </td>
+                            <td class="min-h-fill-table">
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a home icon">
+                                        <mat-icon class="secondary-color">edit_square</mat-icon>
+                                    </button>
+                                    <button mat-icon-button color="primary"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon class="secondary-color">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-end gap-3">
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Atrás
+                    </button>
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Guardar
+                    </button>
+                    <button (click)="nextStep()" class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+            }
+            <!-- end form step 2 -->
+
+            <!-- form 3 -->
+            @if(activeStep === 4){
+            <div class="w-100 main-border py-4 py-lg-5 px-4 d-flex flex-column overflow-hidden flex-1">
+                <div class="d-flex flex-column gap-3 w-100 pe-lg-5">
+                    <div class="d-flex flex-column gap-1 w-100">
+                        <label class="text-label fw-light secondary-color font-14" for="concept">Secuencia
+                            didáctica:</label>
+                        <textarea matInput placeholder="" class="input-main"></textarea>
+                    </div>
+                    <div class="d-flex flex-column gap-1 w-100">
+                        <label class="text-label fw-light secondary-color font-14" for="concept">Secuencia
+                            didáctica:</label>
+                        <textarea matInput placeholder="" class="input-main"></textarea>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-end gap-3 pt-3 pt-lg-5 mt-auto">
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Atrás
+                    </button>
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Guardar
+                    </button>
+                    <button (click)="nextStep()" class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+            }
+            <!--  end form 3 -->
+            <!-- *ngIf="activeStep===3" -->
+            @if(activeStep === 1){
+            <div class="w-100 main-border py-4 py-lg-5 px-4 d-flex flex-column overflow-hidden flex-1">
+                <div class="d-flex flex-column gap-3 w-100 pe-lg-5">
+                    <div class="d-flex flex-column gap-1 w-100">
+                        <label class="text-label fw-light secondary-color font-14" for="concept">Comentarios:</label>
+                        <textarea matInput placeholder="" class="input-main"></textarea>
+                    </div>
+                </div>
+                <div class="d-flex flex-column flex-md-row justify-content-end gap-3 pt-3 pt-lg-5 mt-auto">
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Atrás
+                    </button>
+                    <button class="btn btn-primary font-14 w-auto px-3" style="min-width: 120px;">
+                        Iniciar ajustes
+                    </button>
+                </div>
+            </div>
+            }
+            <!--  end form 3 -->
+            <!-- *ngIf="activeStep===3" -->
+
+        </div>
+    </div>
+</div>

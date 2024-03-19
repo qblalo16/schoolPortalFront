@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { APP_ROUTING } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_SETTINGS, RecaptchaSettings, RECAPTCHA_LANGUAGE } from 'ng-recaptcha';
 import { LoginComponent } from './components/login/login.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -77,6 +78,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
       RouterModule,
       MatFormFieldModule,
       MatIconModule,
+      MatButtonModule,
       MatSlideToggleModule,
       MatTableModule,
       MatTooltipModule,

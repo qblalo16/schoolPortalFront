@@ -93,14 +93,14 @@ text-label-b {
 
 // new
 
-.bg-main {
-  background: url('/assets/background.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100%;
-}
+// .bg-main {
+//   background: url('/assets/background.png') no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+//   min-height: 100%;
+// }
 ::ng-deep .mdc-button__label,
 ::ng-deep .mat-calendar-body-cell,
 ::ng-deep .mat-calendar-body-label,

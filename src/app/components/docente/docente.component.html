@@ -1,54 +1,58 @@
-<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 main-container-limits">
-    <div class="row">
-        <div class="col-12 col-lg-3 d-flex flex-column flex-md-row flex-lg-column gap-3 gap-md-5 mb-4 mb-lg-0">
+<div class="bg-white p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
+    <div class="row w-100 mx-auto">
+        <div class="col-12 col-lg-3 d-flex flex-column flex-md-row flex-lg-column gap-3 gap-lg-5 mb-4 mb-lg-0">
             <div class="w-100">
-                <h5 class="text-label text-center">Foto de perfil</h5>
+                <h5 class="text-center font-16 fw-semibold main-color">Foto de perfil</h5>
                 <div clas="d-flex w-100 justify-content-center">
                     <input type="file" #inputImagen (change)="cargarImagen($event)" hidden>
                     <img src={{this.fileImage}} (click)="seleccionarImagen()" height="200" class="w-100" />
                 </div>
             </div>
-            <div class="w-100 main-border p-3 flex-1 d-flex flex-column">
-                <h5 class="text-label text-center">Asignaciones escolares</h5>
-                <mat-form-field appearance="outline">
-                    <mat-label>Elige un grupo</mat-label>
-                    <mat-select [(value)]="selectedItem">
-                        <mat-option *ngFor="let item of  itemsGrupos"
-                            [value]="item.idContenidoCatalogos">{{item.descripcion}}</mat-option>
-                    </mat-select>
-                </mat-form-field>
+            <div class="w-100 main-border p-3 flex-1 d-flex flex-column gap-3">
+                <h5 class="text-center font-16 fw-semibold main-color">Asignaciones escolares</h5>
+                <div class="d-flex flex-column">
+                    <label class="fw-semibold font-14 seconday-color" for="group">Grado / Grupo </label>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Elige un grupo</mat-label>
+                        <mat-select [(value)]="selectedItem">
+                            <mat-option *ngFor="let item of  itemsGrupos"
+                                [value]="item.idContenidoCatalogos">{{item.descripcion}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
             </div>
         </div>
-        <div class="flex-1 row mx-auto mx-sm-0 px-md-0">
+        <div class="flex-1 row mx-auto px-md-0">
             <div class="col-12 col-md-6 mb-4 mb-md-0 px-0-for-sm">
                 <div class="main-border p-3 d-flex flex-column gap-3">
-                    <h5 class="text-label text-center">
+                    <h5 class="text-center font-16 fw-semibold main-color">
                         Datos Personales
                     </h5>
                     <form [formGroup]="form" class="d-flex flex-column gap-3">
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="nombres">Nombre(s)</label>
+                            <label class="fw-semibold font-14 seconday-color" for="nombres">Nombre(s)</label>
                             <input matInput id="nombres" type="text" name="nombres" formControlName="nombres"
-                                class="mx-3 input-main input-width-mid" aria-label="Montserrat">
+                                class="mx-3 input-main input-width-mid font-14" aria-label="Montserrat">
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="apaterno">Apellido Paterno</label>
+                            <label class="fw-semibold font-14 seconday-color" for="apaterno">Apellido Paterno</label>
                             <input matInput id="apaterno" type="text" name="apaterno" formControlName="apaterno"
-                                class="mx-3 input-main input-width-mid" aria-label="Montserrat">
+                                class="mx-3 input-main input-width-mid font-14" aria-label="Montserrat">
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="amaterno">Apellido Materno</label>
+                            <label class="fw-semibold font-14 seconday-color" for="amaterno">Apellido Materno</label>
                             <input matInput id="amaterno" type="text" name="amaterno" formControlName="amaterno"
-                                class="mx-3 input-main input-width-mid" aria-label="Montserrat">
+                                class="mx-3 input-main input-width-mid font-14" aria-label="Montserrat">
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="fnacimiento">Fecha de Nacimiento</label>
+                            <label class="fw-semibold font-14 seconday-color" for="fnacimiento">Fecha de Nacimiento</label>
                             <input matInput id="fnacimiento" type="date" name="fnacimiento"
-                                formControlName="fnacimiento" class="mx-3 input-main input-width-mid"
+                                formControlName="fnacimiento" class="mx-3 input-main input-width-mid font-14"
                                 aria-label="Montserrat">
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="amaterno">CURP</label>
+                            <label class="fw-semibold font-14 seconday-color" for="amaterno">CURP</label>
                             <div class="d-flex gap-3 align-items-center mx-3">
                                 <input matInput id="curp" value={{this.curpfile}} name="upload"
                                     class="input-main input-width-mid" aria-label="Montserrat" style="width: 76%;">
@@ -60,15 +64,15 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="fnacimiento">Teléfono</label>
+                            <label class="fw-semibold font-14 seconday-color" for="fnacimiento">Teléfono</label>
                             <input matInput id="telefono" type="text" name="telefono"
-                                formControlName="telefono" class="mx-3 input-main input-width-mid"
+                                formControlName="telefono" class="mx-3 input-main input-width-mid font-14"
                                 aria-label="Montserrat">
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="email">Correo Electrónico</label>
+                            <label class="fw-semibold font-14 seconday-color" for="email">Correo Electrónico</label>
                             <input matInput id="email" type="email" name="email"
-                                formControlName="email" class="mx-3 input-main input-width-mid"
+                                formControlName="email" class="mx-3 input-main input-width-mid font-14"
                                 aria-label="Montserrat">
                         </div>
                     </form>
@@ -76,10 +80,10 @@
             </div>
             <div class="col-12 col-md-6 d-flex px-0-for-sm">
                 <div class="main-border p-3 d-flex flex-column gap-3 w-100">
-                    <h5 class="text-label text-center">Datos profesionales</h5>
+                    <h5 class="text-center font-16 fw-semibold main-color">Datos profesionales</h5>
                     <form [formGroup]="form1" class="d-flex flex-column gap-3">
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="amaterno">Cédula profesional</label>
+                            <label class="fw-semibold font-14 seconday-color" for="amaterno">Cédula profesional</label>
                             <div class="d-flex gap-3 align-items-center mx-3">
                                 <input matInput id="cedula" type="text" value={{this.cedulafile}} name="cedula"
                                     class="input-main input-width-mid" aria-label="Montserrat" style="width: 76%;">
@@ -91,13 +95,13 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column gap-2">
-                            <label class="text-label fw-semibold" for="email">Anexo</label>
+                            <label class="fw-semibold font-14 seconday-color" for="email">Anexo</label>
                             <input matInput id="anexo" type="anexo" name="anexo"
-                                formControlName="anexo" class="mx-3 input-main input-width-mid"
+                                formControlName="anexo" class="mx-3 input-main input-width-mid font-14"
                                 aria-label="Montserrat">
                         </div>
                         <div class="d-flex justify-content-end px-4">
-                            <button type="button" class="btn btn-custom-b px-4" type="button" (click)="submit()">
+                            <button type="button" class="btn btn-custom-b px-4 font-14" type="button" (click)="submit()">
                                 Guardar
                             </button>
                         </div>

@@ -13,22 +13,32 @@ import { AsistenciaComponent } from './components/asistencia/asistencia.componen
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { AsistenciaMainComponent } from './components/asistencia-main/asistencia-main.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AlumnAttendanceComponent } from './components/alumn-attendance/alumn-attendance.component';
+import { AlumnAccountComponent } from './components/alumn-account/alumn-account.component';
+import { AlumnContactComponent } from './components/alumn-contact/alumn-contact.component';
+import { PlaneacionMainComponent } from './components/planeacion-main/planeacion-main.component';
 
- const APP_ROUTES: Routes = [
+const APP_ROUTES: Routes = [
     { path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent,
-    children: [
-        {path: 'index', component: HomepageComponent },
-        { path: 'grade-group', component: GradeGroupComponent },
-        { path: 'new-group', component: NuevoGrupoComponent },
-        { path: 'docentes-main', component: DocenteMainComponent },
-        { path: 'alumnos-main', component: AlumnosMainComponent },
-        { path: 'alumno', component: AlumnosComponent },
-        { path: 'calendario', component: CalendarioComponent },
-        { path: 'finanzas', component: FinanzasComponent },
-        { path: 'asistencia-main', component: AsistenciaMainComponent },
-        { path: 'docente', component: DocenteComponent },
-        ]},
+    {
+        path: 'home', component: HomeComponent,
+        children: [
+            { path: 'index', component: HomepageComponent },
+            { path: 'grade-group', component: GradeGroupComponent },
+            { path: 'new-group', component: NuevoGrupoComponent },
+            { path: 'docentes-main', component: DocenteMainComponent },
+            { path: 'alumnos-main', component: AlumnosMainComponent },
+            { path: 'alumnos-main/asistencias', component: AlumnAttendanceComponent },
+            { path: 'alumnos-main/edo-cuenta', component: AlumnAccountComponent },
+            { path: 'alumnos-main/contacto', component: AlumnContactComponent },
+            { path: 'alumno', component: AlumnosComponent },
+            { path: 'calendario', component: CalendarioComponent },
+            { path: 'finanzas', component: FinanzasComponent },
+            { path: 'asistencia-main', component: AsistenciaMainComponent },
+            { path: 'docente', component: DocenteComponent },
+            { path: 'planeacion', component: PlaneacionMainComponent },
+        ]
+    },
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });
