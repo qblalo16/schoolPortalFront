@@ -1,0 +1,91 @@
+<div class="bg-white p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
+    <div class="row px-0-for-sm">
+        <div class="col-12 col-md-6 col-xl-3 pb-3">
+            <div class="d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                <i class="fa-solid fa-money-bill" style="font-size: 45px; color: #F24727;"></i>
+                <div>
+                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Total de cobros</p>
+                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3 pb-3">
+            <div class="d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                <i class="fa-sharp fa-solid fa-file-invoice-dollar" style="font-size: 45px; color: #158831;"></i>
+                <div>
+                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Total de Pagado</p>
+                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3 pb-3">
+            <div class="d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                <i class="fa-sharp fa-solid fa-scale-balanced" style="font-size: 45px; color: #1A1A1A;"></i>
+                <div>
+                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Saldo</p>
+                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-3 pb-3">
+            <div class="d-flex py-2 px-4 border-card-account align-items-center gap-3">
+                <i class="fa-solid fa-calendar-xmark" style="font-size: 45px; color: #1A1A1A;"></i>
+                <div>
+                    <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Saldo vencido</p>
+                    <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column flex-md-row justify-content-md-start">
+        <mat-form-field appearance="outline" class="font-14">
+            <mat-label style="margin-top: -3px;" class="font-14">Elige un mes</mat-label>
+            <mat-select [(value)]="selectedMounth" class="font-14">
+                <mat-option value="option1">Enero</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6 d-flex flex-column gap-3">
+            <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                <div class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account">
+                    <i class="fa-solid fa-circle-check" style="font-size: 20px; color: #158831;"></i>
+                    <i class="fa-sharp fa-solid fa-file-invoice-dollar" style="font-size: 45px; color: #D9A706;"></i>
+                    <div>
+                        <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Pago de Inscripción </p>
+                        <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                    </div>
+                </div>
+                <button class="btn" disabled style="border: none !important;">
+                    <i class="fa-solid fa-envelope" style="font-size: 38px; color: #E6E6E6;"></i>
+                </button>
+            </div>
+            <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                <div class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account">
+                    <i class="fa-solid fa-circle-minus" style="font-size: 20px; color: #F24727;"></i>
+                    <i class="fa-sharp fa-solid fa-file-invoice-dollar" style="font-size: 45px; color: #D9A706;"></i>
+                    <div>
+                        <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Pago de Mensualidad Enero </p>
+                        <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                    </div>
+                </div>
+                <button class="btn">
+                    <i class="fa-solid fa-envelope" style="font-size: 38px; color: #1A1A1A;"></i>
+                </button>
+            </div>
+            <div class="d-flex gap-3 w-100 align-items-center pe-md-4">
+                <div class="flex-1 d-flex px-3 py-2 align-items-center gap-4 border-card-account">
+                    <i class="fa-solid fa-circle-minus" style="font-size: 20px; color: #F24727;"></i>
+                    <i class="fa-sharp fa-solid fa-file-invoice-dollar" style="font-size: 45px; color: #D9A706;"></i>
+                    <div>
+                        <p class="mb-0 pb-1 fw-semibold secondary-color font-16">Seguro Escolar </p>
+                        <p class="mb-0 pb-0 fw-semibold secondary-color font-14">$1,000.00</p>
+                    </div>
+                </div>
+                <button class="btn">
+                    <i class="fa-solid fa-envelope" style="font-size: 38px; color: #1A1A1A;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

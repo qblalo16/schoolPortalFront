@@ -1,68 +1,79 @@
-<div class="bg-white p-3 py-md-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-5">
-  <div class="d-flex gap-3 align-items-center align-items-md-stretch flex-column flex-md-row pb-md-3">
-    <div class="d-flex">
-      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input">
+<div class="bg-white p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
+  <div class="d-flex gap-3 align-items-stretch flex-row pb-md-5">
+    <div class="d-flex flex-1-in-sm">
+      <input matInput placeholder="Ingrese su búsqueda" class="input-main icon-search-input font-14">
     </div>
     <button type="button" class="btn btn-custom" type="button" (click)="newdocente()">
-      Nuevo alumno
+      <span class="d-none d-md-inline-block font-14">
+        Nuevo alumno
+      </span>
+      <span class="d-md-none px-2 font-14">
+        +
+      </span>
     </button>
   </div>
-  <table mat-table [dataSource]="studentsDS">
-    <!-- Columnas de la tabla -->
+  <div class="w-100 container-border-for-sm mt-4 mt-md-0" style="max-width: 99vw;">
+    <div class="overflow-x-auto">
+      <table mat-table [dataSource]="studentsDS">
+        <!-- Columnas de la tabla -->
+        <ng-container matColumnDef="Nombres">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef> Nombre(s) </th>
+          <td mat-cell *matCellDef="let registro" class="font-12 gray-color fw-semibold"> {{registro.nombres}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="Nombres">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef> Nombre(s) </th>
-      <td mat-cell *matCellDef="let registro"> {{registro.nombres}} </td>
-    </ng-container>
+        <ng-container matColumnDef="ApellidoPaterno">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef>Apellido Paterno</th>
+          <td mat-cell *matCellDef="let registro" class="font-12 gray-color fw-semibold"> {{registro.aPaterno}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="ApellidoPaterno">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Apellido Paterno</th>
-      <td mat-cell *matCellDef="let registro"> {{registro.aPaterno}} </td>
-    </ng-container>
+        <ng-container matColumnDef="ApellidoMaterno">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef>Apellido Materno</th>
+          <td mat-cell *matCellDef="let registro" class="font-12 gray-color fw-semibold"> {{registro.aMaterno}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="ApellidoMaterno">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Apellido Materno</th>
-      <td mat-cell *matCellDef="let registro"> {{registro.aMaterno}} </td>
-    </ng-container>
+        <ng-container matColumnDef="GradoGrupo">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef>Grado y Grupo</th>
+          <td mat-cell *matCellDef="let registro" class="font-12 gray-color fw-semibold"> {{registro.gradoGrupo}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="GradoGrupo">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Grado y Grupo</th>
-      <td mat-cell *matCellDef="let registro"> {{registro.gradoGrupo}} </td>
-    </ng-container>
+        <ng-container matColumnDef="Matricula">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef>Matricula</th>
+          <td mat-cell *matCellDef="let registro" class="font-12 gray-color fw-semibold"> {{registro.matricula}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="Matricula">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Matricula</th>
-      <td mat-cell *matCellDef="let registro"> {{registro.matricula}} </td>
-    </ng-container>
+        <ng-container matColumnDef="FechaNacimiento">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef>Fecha Nacimiento</th>
+          <td mat-cell *matCellDef="let registro" class="font-12 gray-color fw-semibold"> {{registro.fechaNacimiento}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="FechaNacimiento">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Fecha Nacimiento</th>
-      <td mat-cell *matCellDef="let registro"> {{registro.fechaNacimiento}} </td>
-    </ng-container>
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell class="mat-header-cell fw-semibold font-14" *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let row" class="d-flex gap-3 py-3 flex-wrap">
+            
+            <a routerLink="/home/alumno">
+              <i (click)="onDelete(row.id)" class="fas fa-user" matTooltip="Alumno" style="color: #083A5B;"></i>
+            </a>
+            <a routerLink="edo-cuenta">
+              <i class="fa-solid fa-credit-card-alt" matTooltip="Estado de cuenta" style="color: #083A5B;"></i>
+            </a>
+            <a routerLink="asistencias">
+              <i class="fa-solid fa-person" matTooltip="Asistencia" style="color: #083A5B;"></i>
+            </a>
+            <a routerLink="contacto">
+              <i class="fa-solid fa-address-book" matTooltip="Contacto"
+                style="color: #083A5B;"></i>
+            </a>
+            <i (click)="onDelete(row.id)" class="fa-solid fa-certificate" matTooltip="Calificaciones"
+              style="color: #083A5B;"></i>
+          </td>
+        </ng-container>
+        <!-- Agrega más columnas según sea necesario -->
 
-    <ng-container matColumnDef="Actions">
-      <th mat-header-cell class="mat-header-cell fw-semibold" *matHeaderCellDef>Acciones</th>
-      <td mat-cell *matCellDef="let row">
+        <!-- Filas de la tabla -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
 
-        <i (click)="onDelete(row.id)" class="fas fa-user" matTooltip="Alumno" style="color: #083A5B;"></i>
-        &nbsp;
-        <i (click)="onDelete(row.id)" class="fa-solid fa-credit-card-alt" matTooltip="Estado de cuenta"
-          style="color: #083A5B;"></i>
-        &nbsp;
-        <i (click)="onDelete(row.id)" class="fa-solid fa-person" matTooltip="Asistencia" style="color: #083A5B;"></i>
-        &nbsp;
-        <i (click)="onDelete(row.id)" class="fa-solid fa-address-book" matTooltip="Contacto"
-          style="color: #083A5B;"></i>
-        &nbsp;
-        <i (click)="onDelete(row.id)" class="fa-solid fa-certificate" matTooltip="Calificaciones"
-          style="color: #083A5B;"></i>
-
-      </td>
-    </ng-container>
-    <!-- Agrega más columnas según sea necesario -->
-
-    <!-- Filas de la tabla -->
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
 </div>

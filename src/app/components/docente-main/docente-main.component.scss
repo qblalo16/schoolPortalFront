@@ -48,21 +48,27 @@
     color: #F36E27;
   }
 
-.input-main{
-  border: 2px solid #D1D1D1;
-  padding: 8px 13px;
-  color: #191919;
-  min-width: 300px;
-  border-radius: 5px;
-}
-.input-main::placeholder {
-  color: #191919;
-}
-
 .icon-search-input{
   padding-left: 50px;
   background-image: url('/assets/icons/search.svg');
   background-size: 24px auto;
   background-repeat: no-repeat;
   background-position: 10px 8px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+  border-color: #D1D1D1 !important;
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+  border-width: 2px !important;
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+  border-color: #D1D1D1 !important;
+  min-height: 15px !important;
+  border-width: 2px !important;
+}
+
+::ng-deep .mat-mdc-floating-label {
+  top: 50% !important;
 }

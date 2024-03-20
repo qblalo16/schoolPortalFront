@@ -1,0 +1,27 @@
+<div class="p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
+    <div class="d-flex flex-column flex-md-row justify-content-md-start">
+        <mat-form-field appearance="outline" class="font-14">
+            <mat-label style="margin-top: -3px;" class="font-14">Elige un mes</mat-label>
+            <mat-select [(value)]="selectedMounth" class="font-14">
+                <mat-option value="option1">Enero</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="d-flex flex-wrap px-0 gap-3 gap-md-5">
+        <div class="card-outline d-flex justify-content-center align-items-center flex-column gap-3 p-3">
+            <p class="secondary-color fw-semibold fs-6 pb-0 mb-0">Asistencias</p>
+            <i class="fa-solid fa-person-walking" matTooltip="Asistencia" style="color: #158831; font-size: 48px;"></i>
+            <p class="secondary-color fw-bold fs-1 pb-0 mb-0" style="line-height: 1;">0</p>
+        </div>
+        <div class="card-outline d-flex justify-content-center align-items-center flex-column gap-3 p-3">
+            <p class="secondary-color fw-semibold fs-6 pb-0 mb-0">Retardo</p>
+            <i class="fa-solid fa-person-walking" matTooltip="Asistencia" style="color: #FAC711; font-size: 48px;"></i>
+            <p class="secondary-color fw-bold fs-1 pb-0 mb-0" style="line-height: 1;">0</p>
+        </div>
+        <div class="card-outline d-flex justify-content-center align-items-center flex-column gap-3 p-3">
+            <p class="secondary-color fw-semibold fs-6 pb-0 mb-0">Ausencias</p>
+            <i class="fa-solid fa-person-walking" matTooltip="Asistencia" style="color: #F24727; font-size: 48px;"></i>
+            <p class="secondary-color fw-bold fs-1 pb-0 mb-0" style="line-height: 1;">0</p>
+        </div>
+    </div>
+</div>
