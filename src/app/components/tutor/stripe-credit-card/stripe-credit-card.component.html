@@ -1,0 +1,61 @@
+<!--form class="row" novalidate (ngSubmit)="createToken()" [formGroup]="stripeTest">
+  <div class="col-12">
+    <input class="form-control form-control-sm" type="text" formControlName="name" placeholder="Jane Doe">
+  </div>
+  <div class="col-12">
+    <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions">
+    </ngx-stripe-card>
+  </div>
+  <div class="col-12">
+    <button type="submit">
+      Guardar
+    </button>
+  </div>
+</form-->
+
+<ngx-stripe-card-group [formGroup]="stripeTest" [elementsOptions]="elementsOptions" class="p-3">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h6 class="fw-bold">Datos de pago</h6>
+      </div>
+      <div class="col-4 offset-4 text-center mt-1">
+        <img src="../../../../assets/img/AmexVisaMc.jpeg" class="img-fluid" alt="...">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12 text-center mb-3">
+        Datos de la tarjeta
+      </div>
+      <div class="col-6">
+        <small class="text-muted">Nombre del titular</small>
+        <input type="text" class="form-control form-control-sm" formControlName="name" placeholder="Como aparece en la tarjeta"/>
+      </div>
+      <div class="col-6">
+        <small class="text-muted">Número de tarjeta</small>
+        <ngx-stripe-card-number [options]="cardOptions" class="custom-input"></ngx-stripe-card-number>
+      </div>
+      <div class="col-6">
+        <small class="text-muted">Expiración</small>
+        <ngx-stripe-card-expiry [options]="cardOptions" class="custom-input"></ngx-stripe-card-expiry>
+      </div>
+      <div class="col-6">
+        <small class="text-muted">Código de seguridad</small>
+        <ngx-stripe-card-cvc [options]="cardOptions" class="custom-input"></ngx-stripe-card-cvc>
+      </div>
+      <div class="col-12 text-end mt-5">
+        <button class="btn btn-light btn-sm me-2" type="submit" (click)="closeModal()">
+          Cancelar
+        </button>
+        <button class="btn btn-dark btn-sm me-2" type="submit" (click)="createToken()">
+          Guardar
+        </button>
+      </div>
+    </div>
+  </ngx-stripe-card-group>
+  
+  <ng-template #errorModal let-modal>
+    <app-danger [tittleMsg]="'Importante'" [contentMsg]="errorMsgModal" (confirmAction)="closeModal()">
+    </app-danger>
+  </ng-template>
+  

@@ -145,6 +145,13 @@ public saveTutor(tutor:any){
     }
   });
 }
+public getTutorById(idUser:number){
+  return this.httpClient.get(environment.Backend + 'api/Tutor/GetTutorByIdUsuario/'+ idUser ,{
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}
 public updateTutor(tutor:any){
 return this.httpClient.put(environment.Backend + 'api/Tutor/', tutor,{
   headers: {

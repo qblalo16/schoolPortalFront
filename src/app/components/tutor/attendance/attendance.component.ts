@@ -6,8 +6,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-attendance',
-  standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule],
   templateUrl: './attendance.component.html',
   styleUrl: './attendance.component.scss'
 })

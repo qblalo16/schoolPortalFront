@@ -12,7 +12,6 @@ import { FinanzasComponent } from './components/finanzas/finanzas.component';
 import { AsistenciaComponent } from './components/asistencia/asistencia.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { AsistenciaMainComponent } from './components/asistencia-main/asistencia-main.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { AlumnAttendanceComponent } from './components/alumn-attendance/alumn-attendance.component';
 import { AlumnAccountComponent } from './components/alumn-account/alumn-account.component';
 import { AlumnContactComponent } from './components/alumn-contact/alumn-contact.component';
@@ -24,6 +23,8 @@ import { CalendarComponent as CalendarComponentTutor} from './components/tutor/c
 import { PayComponent } from './components/tutor/pay/pay.component';
 import { PerfilComponent } from './components/tutor/perfil/perfil.component';
 import { HomeTutorComponent } from './components/home-tutor/home-tutor.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { ProccessPayComponent } from './components/tutor/proccess-pay/proccess-pay.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: LoginComponent },
@@ -52,7 +53,8 @@ const APP_ROUTES: Routes = [
         { path: 'calendario', component: CalendarComponentTutor },
         { path: 'pagos', component: PayComponent },
         { path: 'perfil', component: PerfilComponent },
-        { path: 'index', component: HomeTutorComponent }
+        { path: 'index', component: HomeTutorComponent },
+        { path: 'process-pay', component: ProccessPayComponent }
     ] },
 ];
 

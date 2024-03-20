@@ -31,7 +31,7 @@
                   data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="/assets/img/userIcon.png" style="width: 40px; height: 40px;"
                      class="object-fit-cover rounded-circle me-2" alt="">
-                  Nombre tutor
+                 {{name}}
                </a>
                <ul class="dropdown-menu px-3 py-2 gap-2">
                   <li class="d-flex align-items-center gap2 py-1">
@@ -58,7 +58,7 @@
                <div></div>
                <div></div>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse"  #sideNavbar id="navbarNav">
                <div class="navbar-nav overflow-y-auto w-100 bg-white" style="height: calc(100vh - 60px);">
                   <div *ngFor="let module of modules" class="d-flex flex-column py-3"
                      style="border-bottom: 1px solid #E6E6E6;">
@@ -91,7 +91,7 @@
             </div>
          </div>
       </nav>
-      <div class="w-100 h-100 bg-main-in" style="flex: 0 1 auto;">
+      <div class="w-100 h-100 bg-main-in" style="flex: 0 1 auto;"  #content >
          <div class="w-100 overflow-y-auto h-100">
             <div class="w-100 d-md-none" style="height: 60px;"></div>
             <router-outlet></router-outlet>

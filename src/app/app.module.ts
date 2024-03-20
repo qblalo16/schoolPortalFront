@@ -46,6 +46,12 @@ import { PerfilComponent } from './components/tutor/perfil/perfil.component'
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
+import { FinanzasComponent } from './components/finanzas/finanzas.component';
+import { ProccessPayComponent } from './components/tutor/proccess-pay/proccess-pay.component';
+import { NgxStripeModule } from 'ngx-stripe';
+import { environment } from '../enviroments/environment';
+import { StripeCreditCardComponent } from './components/tutor/stripe-credit-card/stripe-credit-card.component';
+
 
 @NgModule({
     declarations: [
@@ -67,13 +73,17 @@ import { MatInputModule } from '@angular/material/input';
       SuccessComponent,
       HomeComponentTutor,
       AccountComponentTutor,
-      // AttendanceComponentTutor,
+      AttendanceComponentTutor,
       CalendarComponentTutor,
-      // PayComponent,
-      PerfilComponent
+      PayComponent,
+      PerfilComponent,
+      FinanzasComponent,
+      ProccessPayComponent,
+      StripeCreditCardComponent
     ],
     imports: [
       APP_ROUTING,
+      NgxStripeModule.forRoot(environment.stripePk),
       MatSelectModule,
       MatSnackBarModule,
       MatDialogModule,
@@ -100,7 +110,7 @@ import { MatInputModule } from '@angular/material/input';
       MatCheckboxModule,
       MatTabsModule,
       MatExpansionModule,
-      MatInputModule
+      MatInputModule,
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'es-Mx' },
     {provide: RECAPTCHA_SETTINGS, useValue: { siteKey:  '6LeufJUpAAAAAFRCn1-DkuPgQO5kC1Mpo-ASTDRD' as RecaptchaSettings} },

@@ -1,5 +1,5 @@
 <div class="p-3 py-lg-5 px-md-4 w-100 d-flex flex-column gap-3 gap-md-4 gap-xxl-5 main-container-limits overflow-hidden">
-    <div class="w-100 d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+    <div *ngIf="!buyCarActive" class="w-100 d-flex justify-content-center align-items-center" style="min-height: 90vh;">
         <div class=" d-flex flex-column align-items-center">
             <p class="fs-2 secondary-color fw-light pb-4 text-center">
                 Agrega desde tu estado de cuenta <br/> los conceptos a pagar   
@@ -9,7 +9,7 @@
             <i class="fa-solid fa-cart-arrow-down secondary-color" style="font-size: 10rem;"></i>
         </div>
     </div>
-    <div class="w-100 d-flex justify-content-center align-items-center" style="min-height: 77vh;">
+    <div  class="w-100 d-flex justify-content-center align-items-center" style="min-height: 77vh;">
         <div class="my-5" style="background-color: #083A5B; width: 85%;">
             <div class="m-5 mb-2 row" style="border: 1px solid white;">
                 <div class="col-12 col-md-7 pb-5">
@@ -23,7 +23,7 @@
                                 <i class="fa-sharp fa-solid fa-file-invoice-dollar"
                                     style="font-size: 20px; color: #D9A706;"></i>
                                 <div>
-                                    <p class="mb-0 pb-1 fw-semibold font-16">Pago de Inscripción
+                                    <p class="mb-0 pb-1 fw-semibold font-16">Pago de Mensualidad
                                     </p>
                                 </div>
                             </div>
@@ -53,6 +53,9 @@
                 <div class="d-flex w-100 justify-content-end">
                     <button type="button" class="btn btn-primary px-4 font-14" style="min-width: none; width: auto; background-color: #F36E28;">
                         Pagar
+                    </button>
+                    <button type="button" class="btn btn-primary px-4 font-14" style="min-width: none; width: auto; background-color: #F36E28;">
+                        Agregar Metodo de Pago
                     </button>
                 </div>
             </div>

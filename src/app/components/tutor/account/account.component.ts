@@ -10,20 +10,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-account',
-  // standalone: true,
-  // imports: [
-  //   MatTabsModule,
-  //   MatIconModule, 
-  //   MatCheckboxModule, 
-  //   MatExpansionModule, 
-  //   MatFormFieldModule, 
-  //   MatSelectModule, 
-  //   MatInputModule, 
-  //   FormsModule
-  // ],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss'
 })
 export class AccountComponent {
   selectedMounth = 'option1';
+
+  pagar(){
+    console.log("Pagar");
+    localStorage.setItem("mensaualidad1000","18");
+  }
 }

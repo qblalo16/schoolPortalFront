@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { BackendService } from '../../../services/backend.services';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +17,7 @@ export class HomeComponent {
 
   public fullName: string = "";
   public mouseout: boolean = true;
+  public name:string="";
   public modules: Array<any> = [
     { Id: 1, ModuleName: 'Perfil', Path: 'perfil', Icon: 'fa-solid fa-user', IsActive: false },
     { Id: 2, ModuleName: 'Estado de Cuenta', Path: 'cuenta', Icon: 'fa-solid fa-money-bill', IsActive: false },
@@ -30,14 +33,28 @@ export class HomeComponent {
     top: '0px'
   };
 
-  constructor(private router: Router, private aRoute: ActivatedRoute) {
+  constructor(private ws: BackendService, private spinner: NgxSpinnerService, private router: Router, private aRoute: ActivatedRoute) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit(): void {
     //this.initUserInfo();
-    var user = localStorage.getItem('usuario');
+    this.spinner.show();
+    var user = JSON.parse(localStorage.getItem('usuario')!);
     this.fullName = user!;
+   this.ws.getTutorById(user.id).subscribe(
+    {
+      next: (tutor:any) => {
+    this.name=tutor.nombres + " "+ tutor.apellidoPaterno+ " "+ tutor.apellidoMaterno;
+    this.spinner.hide();
+      },
+      error: (e:any) =>{
+        console.error(`Error al obtener el tutor ${e}`);
+        this.spinner.hide();
+      }
+  
+    });
+
 
   }
 

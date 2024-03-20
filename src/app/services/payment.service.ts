@@ -15,7 +15,7 @@ export class PaymentService {
 
   public addCardByToken(token: string) {
     return this.httpClient.post<string>(environment.Backend
-        + `api/payment/addCardByToken`, token, {
+        + `api/Pagos/addCardByToken`, token, {
       headers: {
         'Content-Type': 'application/json',
         'Ocp-Apim-Subscription-Key': environment.Backend
@@ -25,7 +25,7 @@ export class PaymentService {
   
   public createPaymentMethodByTokenWithCustomer(token: string, customerId: string) {
     return this.httpClient.post<string>(environment.Backend
-        + `api/payment/createPaymentMethodByTokenWithCustomer/customer/${customerId}`, { token: token }, {
+        + `api/Pagos/createPaymentMethodByTokenWithCustomer/customer/${customerId}`, { token: token }, {
       headers: {
         'Content-Type': 'application/json',
       }
@@ -33,10 +33,9 @@ export class PaymentService {
   }
   
   public getPaymentMethods(idUsuario:number) {
-    return this.httpClient.get<PaymentDTO[]>(environment.Backend + `api/Payment/getPaymentMethod/tenant/` + idUsuario, {
+    return this.httpClient.get<PaymentDTO[]>(environment.Backend + `api/Pagos/GetPaymentMethod/User/` + idUsuario, {
       headers: {
         'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key': environment.Backend
       }
     });
   }
@@ -61,7 +60,7 @@ export class PaymentService {
   
   public deletePaymentMethod(paymentMethodId: string) {
     return this.httpClient.delete<PaymentDTO[]>(environment.Backend
-        + `api/Payment/DeletePaymentMethod/payment/${paymentMethodId}`, {
+        + `api/Pagos/DeletePaymentMethod/payment/${paymentMethodId}`, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -70,7 +69,7 @@ export class PaymentService {
   
   public createNewCustomerWithPaymentMethodInApi(userId: string, customerPayment: CustomerPayment) {
     return this.httpClient.post<string>(environment.Backend
-        + `api/Payment/CreateNewCustomerWithPaymentMethodInApi/user/${userId}`,
+        + `api/Pagos/CreateNewCustomerWithPaymentMethodInApi/user/${userId}`,
       customerPayment, {
       headers: {
         'Content-Type': 'application/json'
@@ -80,7 +79,7 @@ export class PaymentService {
   
   public createPaymentIntent(paymentIntent: PaymentIntent) {
     return this.httpClient.post<any>(environment.Backend
-        + `api/Payment/PaymentIntent`,
+        + `api/Pagos/PaymentIntent`,
         paymentIntent, {
       headers: {
         'Content-Type': 'application/json'

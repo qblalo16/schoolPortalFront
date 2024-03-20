@@ -64,11 +64,21 @@ login() {
   console.log(this.buildData());
   this.spinner.show();
   this.service.login(this.buildData()).subscribe({
-    next: (recaptchaResp) => {
-    console.log(recaptchaResp);
-    localStorage.setItem('usuario',this.form.get('user')?.value );
+    next: (user:any) => {
+    console.log(user);
+    localStorage.setItem('usuario',JSON.stringify(user));
+    switch (user.perfil){
+      case 1:
+        this.router.navigate(['home/index']);
+        break;
+      case 2:
+        this.router.navigate(['tutor/index']);
+        break;
+
+    }
+    
     this.spinner.hide();
-    this.router.navigate(['home/index']);
+   
     },
     error: (err) =>{
       this.spinner.hide();
